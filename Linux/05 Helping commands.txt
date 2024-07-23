@@ -58,7 +58,7 @@ same as manual page
 	
 	Redirect the output of a command to a file, overwriting the file if it exists.
 
-command > filename.txt
+command >> filename.txt
 
 ## Double Redirector (>>):
 
