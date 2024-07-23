@@ -29,9 +29,9 @@ uptime					## It display
 
 ## Listing ##
 
-ls				## It is used to list files and directories in a directory. It is used to list files and directories in a directory.
+ls			## It is used to list files and directories in a directory. It is used to list files and directories in a directory.
 
-ls -l / ls -n	## Displays detailed information about files, including permissions, owner, group, size, and modification time.
+ls -l / ls -n		## Displays detailed information about files, including permissions, owner, group, size, and modification time.
 
 ls -a			##Shows hidden files (those starting with a dot .).
 
@@ -53,16 +53,16 @@ ls -l -R 		## list sub directories recursively
 
 ls -l -x 		## list by lines
 
-ls -u -l -t 	## list by last access time shows newest first
+ls -u -l -t 		## list by last access time shows newest first
 
 
 ## Change Directory ##
 
-cd ..				## Change Current directory to parent/ previous directory
+cd ..			## Change Current directory to parent/ previous directory
 
-cd ../..			## Move two directories up / back from where we are now.
+cd ../..		## Move two directories up / back from where we are now.
 
-cd -				## Switch back to the previous directory where we worked earlier.
+cd -			## Switch back to the previous directory where we worked earlier.
 
 cd ~ /cd - / cd		## Move to the user’s home directory from anywhere
 
@@ -76,23 +76,23 @@ cd /h<TAB_key>/s<TAB_key>/m<TAB_key>	## Change from the current working director
 										
 ## Directory ##
 
-mkdir directory_name					## Used to create directories (folders). It allows users to create directory with specified name. mkdir is a fundamental utility for managing the directory structure in a Linux file system.
+mkdir directory_name				## Used to create directories (folders). It allows users to create directory with specified name. mkdir is a fundamental utility for managing the directory structure in a Linux file system.
 
 mkdir directory_name directory_name		## To create multiple directories
 
-mkdir dir{1..10}						## Create multiple directories with sequence
+mkdir dir{1..10}				## Create multiple directories with sequence
 
-mkdir -p dir1/dir2/dir3					## Create directories with parent directories at a time
+mkdir -p dir1/dir2/dir3				## Create directories with parent directories at a time
 
-mkdir .directory_name					## To create hidden directory
+mkdir .directory_name				## To create hidden directory
 
-rmdir directory_name					## To remove empty directory
+rmdir directory_name				## To remove empty directory
 
-rmdir -p dir1/dir2/dir3					## To delete empty  parent directory with sub directories at a time
+rmdir -p dir1/dir2/dir3				## To delete empty  parent directory with sub directories at a time
 
-rm -rf directory_name					## To delete non-empty directory
+rm -rf directory_name				## To delete non-empty directory
 
-rm -r directory_name					## To remove empty directory
+rm -r directory_name				## To remove empty directory
 
 
 ## rm ##		## used to remove files.
@@ -104,13 +104,14 @@ rm [option] filename
 
 ## Moving and Copying ##
 
-mv file1 file2							## move data from one file to another file
+mv file1 file2						## move data from one file to another file
 
 mv file1 new_file_name 					## rename files and directories 
 
 mv file_name destination/				## move file to a specific destination
 
-cp file1 file2							## To copy files and directories from one location to another.
-										## It can be used to  create duplicate files and create backups.
-										
+cp file1 file2						## To copy files and directories from one location to another.
+							## It can be used to  create duplicate files and create backups.
+
+## Echo commnand ##
 echo "massage"			## For printing messages or information to the console.
