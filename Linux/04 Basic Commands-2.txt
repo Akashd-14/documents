@@ -4,7 +4,7 @@ hostnamectl				## Show detailed information about system
 
 hostname				## Shows static hostname / Shows name of the computer or server
 
-hostname -i				## Shows IP address of our M/C
+hostname -i				## Shows private IP address of our M/C
 
 ifconfig				## Shows IP address and currently working network parts of our M/C
 
