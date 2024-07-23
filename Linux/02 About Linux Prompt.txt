@@ -1,0 +1,43 @@
+
+## Linux Prompt-
+
+	The Linux command line is a text interface to our computer. Often referred to as the shell, terminal, console, prompt.
+	The command prompt is an executable CLI program, cmd.exe
+	The default prompt for many Linux distributions is often a string ending with the dollar sign ('$') for regular users and a hash ('#') for the root or superuser.
+	The prompt typically includes information about the current user, hostname, and the current working directory.
+
+
+##[user@hostname current_directory]$
+
+	user: The current username.
+	hostname: The name of the computer or server.
+	current_directory: The path to the current working directory.
+	$ or #: The prompt character, which is usually a dollar sign ('$') for regular users and a hash ('#') for the root user.
+	
+	Example - [akash@ip-172-12-20-44 home]$
+	here	akash - username
+			172-12-20-44 - private ip address/ hostname of the server
+			home - current working directory name
+			$ - it shows akash is the regular user
+
+## Commands-
+
+	Commands are nothing but executable programs which perform specific task written in it.
+	These executable programs can be called using their name as per provided syntax.
+	Commands are case sensitive. (only small letters)
+  
+  General Syntax:
+		[commands] -[options] -[argument]/[multiple arguments]
+	here	
+		Commands- To run the command.
+		Options - To adjust behavior of the commands.
+		Arguments - The behavior, file/folder name.
+		
+## sudo (Super User DO)- 
+	Generally used as a prefix for some commands that only superusers are allowed to run.
+	If you prefix any command with “sudo”, it will run that command with elevated privileges or in other words allow a user with proper permissions to execute a command as another user, such as the superuser. -
+	This is the equivalent of the “run as administrator” option in Windows. The option of sudo lets us have multiple administrators.
+
+## su (short for substitute or switch user) 
+	allows us to run commands with another user’s privileges.
+	using su is the simplest way to switch to the administrative account in the current login session.

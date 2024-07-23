@@ -1,0 +1,76 @@
+
+We can create files using following commands:
+
+cat	- We can only create a file
+
+touch - It is used to create empty files
+
+vi/vim/vm
+nano		This are the editors.
+
+## cat Command ##
+
+	The cat command is one of the most universal tool yet all it does is copy standard input into standard output
+	It display the content of files and concatenate file.
+	It displaying the content of files and concatenating files, but we can use it in combination with input redirection to create a file with data.
+	Name cat comming from "Concatenate file".
+	
+commands
+
+cat > filename							## Create a file
+
+cat filename							## Display the content of the file
+
+cat filename1 filename2					## Display the content of two files together (concatenate)
+
+cat filename1 > filename2				## Copy the content of one file into another file
+
+cat filename1 filename2 > filename3		## add more than files into one	 file
+
+cat >> filename							## Add new content in existing file
+
+tac filename							## To see the content of the file in bottom to top format.
+
+## touch Command ##
+
+	Using touch command we can create multiple empty files at a time.
+	Main function of the touch command is to update timestamp of file.
+	Using touch command we can update only access time of the file & modify time of the file.
+	
+touch filename				## To create empty file
+
+touch file1 file2 file3		## To createte multiple empty files
+	
+# Timestamp
+	
+	It is the time that shows when the file was created updated & when recently accessed.
+	There are 3 types of timestamp as below
+	
+1) Access Time
+	
+	It shows that whenwas the file last time accessed or opened.
+	we can update access time of the file using
+	
+touch -a filename
+
+2) Modify Time
+
+	It shows that last when the file was modified last time.
+	We can change the modified time of the file using 
+	
+touch -m filename
+
+3) Change Time
+
+	It shows that last time when the file metadata was changed.
+	It depends upon access time & modify time.
+	It shows updated time between access time & modified time.
+
+To get timestamp of a file we use
+
+	stat filename
+	
+	o/p = access : Date		Time
+		  modify : Date		Time
+		  change : Date		Time
+		  

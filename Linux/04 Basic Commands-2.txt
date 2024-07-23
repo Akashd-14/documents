@@ -1,0 +1,116 @@
+## Commands To View System Information ##
+                                                                                                                        
+hostnamectl				## Show detailed information about system
+
+hostname				## Shows static hostname / Shows name of the computer or server
+
+hostname -i				## Shows IP address of our M/C
+
+ifconfig				## Shows IP address and currently working network parts of our M/C
+
+cat /etc/os-release
+cat /etc/os-rel*		## Shows version of O.S. which we using
+
+uname					## It display Operating System name.
+
+uname -r				## It display kernel release information.
+
+uname -a				## It displays:
+						Kernel Version: This includes information about the kernel version running on the system.
+						Hostname: This displays the name of the system on the network (fully qualifiled).
+						Kernel Release: This provides the release number of the kernel.
+						Kernel Architecture: This indicates the system's architecture, such as x86_64 for 64-bit systems or i686 for 32-bit systems.
+						Operating System: This specifies the name of the operating system.
+						
+uptime					## It display 
+						This command displays how long the system has been running and the current system load average.
+						It typically shows the current time, the length of time the system has been up, the number of users logged in, and the system load averages for the past 1, 5, and 15 minutes						
+
+
+## Listing ##
+
+ls				## It is used to list files and directories in a directory. It is used to list files and directories in a directory.
+
+ls -l / ls -n	## Displays detailed information about files, including permissions, owner, group, size, and modification time.
+
+ls -a			##Shows hidden files (those starting with a dot .).
+
+ls -r			## Recursive. It is used to display files and directories in reverse order. It reverses the order of the sorting, showing the files or directories in descending order based on their names.
+
+ls -t			## It Sort by modification time, newest first.
+
+ls -S			## It Shows files or directories with its size.
+
+ls -l -s 		## allocated size of each file
+
+ls --size 		## allocated size of each file using long notation
+
+ls -lsa 		## print the size of the file in long listing format
+
+ls -lsh 		##size of the files in human readable format
+
+ls -l -R 		## list sub directories recursively
+
+ls -l -x 		## list by lines
+
+ls -u -l -t 	## list by last access time shows newest first
+
+
+## Change Directory ##
+
+cd ..				## Change Current directory to parent/ previous directory
+
+cd ../..			## Move two directories up / back from where we are now.
+
+cd -				## Switch back to the previous directory where we worked earlier.
+
+cd ~ /cd - / cd		## Move to the user’s home directory from anywhere
+
+cd /usr/local		## Change from the current directory to /usr/local.
+
+cd (directory name)	## Change from the current working directory to specific directory
+
+cd /h<TAB_key>/s<TAB_key>/m<TAB_key>	## Change from the current working directory to /home/student/music/ without typing in 
+										full using TAB.
+
+										
+## Directory ##
+
+mkdir directory_name					## Used to create directories (folders). It allows users to create directory with specified name. mkdir is a fundamental utility for managing the directory structure in a Linux file system.
+
+mkdir directory_name directory_name		## To create multiple directories
+
+mkdir dir{1..10}						## Create multiple directories with sequence
+
+mkdir -p dir1/dir2/dir3					## Create directories with parent directories at a time
+
+mkdir .directory_name					## To create hidden directory
+
+rmdir directory_name					## To remove empty directory
+
+rmdir -p dir1/dir2/dir3					## To delete empty  parent directory with sub directories at a time
+
+rm -rf directory_name					## To delete non-empty directory
+
+rm -r directory_name					## To remove empty directory
+
+
+## rm ##		## used to remove files.
+rm [option] filename
+	-f : forcefully.
+	-v : verbosely.
+	-r : recursively.
+
+
+## Moving and Copying ##
+
+mv file1 file2							## move data from one file to another file
+
+mv file1 new_file_name 					## rename files and directories 
+
+mv file_name destination/				## move file to a specific destination
+
+cp file1 file2							## To copy files and directories from one location to another.
+										## It can be used to  create duplicate files and create backups.
+										
+echo "massage"			## For printing messages or information to the console.
