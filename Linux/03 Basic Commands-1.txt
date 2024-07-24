@@ -1,5 +1,5 @@
 
-pwd			## print working directory Displays the current working directory, shwoing the full path to your current  location in the file system.
+pwd			## print working directory Displays, the current working directory, shwoing the full path to our current location in the file system.
 		
 tty			## This command displays current user terminal number.
 
