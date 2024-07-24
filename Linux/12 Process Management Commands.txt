@@ -2,9 +2,9 @@
 #### Commands used in Process Management
 
 ## ps(process status)
-	used to list currently running processes.
+	It is used to list currently running processes.
 	It provides information about these processes, such as their process ID (PID), terminal associated with the process, CPU and memory usage, and more.
-	provides a snapshot of the current processes on your system.
+	It provides a snapshot of the current processes on our system.
 
 	syntax
 	ps <options>
@@ -38,8 +38,8 @@
 	the niceness value ranges from -20(highest prioprity) to 19(lowewst priority).
 
 ## nice command
-	used to launch a new process with a specified niceness value.
-	the niceness value ranges from -20(highest prioprity) to 19(lowewst priority).
+	It's used to launch a new process with a specified niceness value.
+	The niceness value ranges from -20(highest prioprity) to 19(lowewst priority).
 
 	Syntax:
 		nice <options> <command>
@@ -58,7 +58,7 @@
 		renice <value> PID
 
 ## kill command
-	used to terminate process manually.
+	It's used to terminate the process manually.
 	kill command sends a signal to a process that terminates the process.
 
 	Syntax:
