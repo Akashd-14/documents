@@ -11,6 +11,7 @@
 
 	The first character = ‘-‘ which means it’s a file, ‘d’ which means it’s a directory.
 	The next nine characters = (rw-r–r–) show the security
+	The number shows the symbolic link (1-file,other no.-directory) 
 	The next column shows the owner of the file. (Here it is root)
 	The next column shows the group owner of the file. (Here it is root which has special access to these files)
 	The next column shows the size of the file in bytes.
@@ -19,51 +20,55 @@
 
 ## Types of file
 
-1) Ordinary File/ Regular File- (start with _)
+1) Ordinary File/ Regular File (start with _)
 
 	File which contain Data.
 	Regular files are nothing but the everyday files used to store information such as text, or images.
 	These files can be found in directories, which are yet another type of files.
 	In Linux, regular files can exist with or without an extension.
 	
-2)Directory File- (Start with d)
+2)Directory File (Start with d)
 	
 	Directory file is equal to folder, it contains files and folders.
 	Directories are also Linux files. But rather than storing data, they store the location of other files. To achieve this, the directory uses directory entries. 
 
-3) Link File
+3) Link File (Start with l)
 
-	A link is a symbolic connection or pointer to a single file that allows you to access it from more than one directory.
-	You can set up a link to a file in a restricted directory, allowing access to the file without providing access to the directory.
-	Soft link- Link will be removed if original file removed. A hard link develops a mirror copy of the original file.
+	A link is a symbolic connection or pointer to a single file that allows us to access it from more than one directory.
+	We can set up a link to a file in a restricted directory, allowing access to the file without providing access to the directory.
+	
+	1) Soft link- 
+		Link will be removed if original file removed.
+		soft or symbolic link creates a pointer to the original file i.e. it creates shortcut of the file.
 	
 	Synatx to create softlink,
-		ln –s <original_file> <softlink_name>
-
-4) Hard link
+		ln –s <original_file> <softlink_name/path>
+		
+	2)Hard link
 	
-	Renaming, deleting or removing file will not effect link. soft or symbolic link creates a pointer to the original file.
+	A hard link develops a mirror copy of the original file.
+	Renaming, deleting or removing original file will not effect link.
 
 	Syntax to create hardlink,
-		ln <original_file> <hardlink_name>
+		ln <original_file> <hardlink_name/path>
 
-5) Named Pipe file- (start with p)  
+4) Named Pipe file (start with p)  
 
 	used to establish two-way communications between two unrelated programs.
-	Sends data from one process to another so that receiving process reads the data FIFO manner.
+	Sends data from one process to another so that receiving process reads the data in FIFO manner.
 	These files are present in /run folder.
 
-6) Socket file- (start with s)
+5) Socket file (start with s)
 
 	Special file to enable communications between two processes.
 	These files are present in /run folder.
 
-7) Character file-  (start with c)
+6) Character file (start with c)
 	Reads and write data character by character.
 	These files are present in /dev folder.
 	A character device file is a hardware file that reads or writes data one character at a time in a file.
 
-8) Block Device file- (start with b)
+7) Block Device file (start with b)
 	
 	file that refers to device.
 	a piece of hardware that provides data access in blocks
