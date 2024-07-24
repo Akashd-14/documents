@@ -15,7 +15,7 @@ less filename
 	head command show few lines from top of the file. 
 	if head command is used without any option, it will show top ten lines by default. –n is used to give count of lines to be shown.
 
-head [options] [filename]
+head <option> <filename>
 
 head filename			## It will show top 10 lines of the content
 
@@ -26,7 +26,7 @@ head -n 5 filename		## It will show top 5 lines of the content
 	tail command show few lines from bottom of file.
 	if tail command is used without any option, it will show top ten lines by default. –n is used to give count of lines to be shown.
 	
-tail [options] [filename]
+tail <option> <filename>
 
 tail filename			## It will show top 10 lines of the content
 
@@ -58,13 +58,13 @@ same as manual page
 	
 	Redirect the output of a command to a file, overwriting the file if it exists.
 
-command >> filename.txt
+command > filename.txt
 
 ## Double Redirector (>>):
 
 	Append the output of a command to a file, without overwriting existing content
 
-command > filename.txt
+command >> filename.txt
 
 ## Piping (|):
 	
