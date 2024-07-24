@@ -12,7 +12,7 @@
 
 	1. gedit: -
 		It is same as that of notepad in windows.
-		You can open gedit graphically in application menu and also using command as $gedit.
+		We can open gedit graphically in application menu and also using command as $gedit.
 	
 	2. kedit: -
 		It is similar to gedit but contain some advance features.
@@ -83,7 +83,13 @@
 		this mode is used for selection.
 		this mode allows you to select and manipulate text.
 		you can enter Visual mode by pressing ‘v’ From Visual mode, you can then perform operations like copying, cutting, or replacing the selected text.
-
+		this mode is used for selection.
+		
+		v - Select character by character
+		V - Select line by line
+		ctrl+v - Select block
+		y,d,c - for copy, delete, and cut selected area
+		
 	## Ex-mode-
 		special executing mode.
 		Use ‘:’ to enter into ex-mode.
@@ -97,14 +103,6 @@
 		:%s///g 	find and replace old word with new word
 		:set nu 	set line numbers
 		:set nonu 	remove line numbers
-	
-	## Visual Mode-
-		this mode is used for selection.
-		v - Select character by character
-		V - Select line by line
-		ctrl+v - Select block
-		y,d,c - for copy, delete, and cut selected area	
-	
 	
 ## nano Command ##
 
