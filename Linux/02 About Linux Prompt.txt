@@ -35,9 +35,9 @@
 		
 ## sudo (Super User DO)- 
 	Generally used as a prefix for some commands that only superusers are allowed to run.
-	If you prefix any command with “sudo”, it will run that command with elevated privileges or in other words allow a user with proper permissions to execute a command as another user, such as the superuser. -
+	If we prefix any command with “sudo”, it will run that command with elevated privileges or in other words allow a user with proper permissions to execute a command as another user, such as the superuser.
 	This is the equivalent of the “run as administrator” option in Windows. The option of sudo lets us have multiple administrators.
 
 ## su (short for substitute or switch user) 
-	allows us to run commands with another user’s privileges.
-	using su is the simplest way to switch to the administrative account in the current login session.
+	It allows us to run commands with another user’s privileges.
+	Using su is the simplest way to switch to the administrative account in the current login session.
