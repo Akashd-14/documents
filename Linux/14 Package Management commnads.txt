@@ -1,0 +1,93 @@
+
+## RPM ##
+	
+	RPM packages are typically files with a .rpm extension.
+	They are archives that contain the files to be installed, along with metadata such as package name, version, dependencies, and installation scripts.
+
+	syntax
+		rpm <option> <package-name>
+		
+	options
+		-i install package file
+		-v verbose
+		-h show hash bar
+		-U Upgrade package
+		-q query package
+		-e erase package
+
+## Note- 
+	To install package using rpm command we need install package dependencies first.
+	
+## Yellowdog Updater Modified (yum) ##
+	
+	It is used to install, update, remove, ununstall or downgrade any software or package in linux machine.
+	It's package was installed in a linux machine.
+	
+	commands- 
+	
+	yum install <package-name> -y 						## Install the package
+
+	yum remove <package-name> - y						## Remove/erase the package
+	
+	yum update <package-name> - y						## Update the package
+	
+	yum upgrade <package-name> - y						## Upgrade/change the package version
+	
+	yum update-to <package-name> = <version> - y		## Upgrade the package specific version
+
+	yum downgrade <package-name> - y					## Downgrade the package version
+	
+	yum list installed									## List which packages installed over M/C
+
+	service <package-name> 	start						## start package service
+	systemctl start <package-name>
+
+	service <package-name>	stop						## stop package service
+	systemctl stop <package-name>
+
+	service <package-name>	status						## cheek Status of package service
+	systemctl status <package-name>
+
+	service <package-name>	restart						## Restart package service
+	systemctl restart <package-name>
+	
+## apt-get ##
+	It is used to install, update, remove, ununstall or downgrade any software or package in ubuntu machine.
+	It's package was installed in a ubuntu machine.
+	
+	commands- 
+	
+	apt-get install <package-name> -y 						## Install the package
+
+	apt-get remove <package-name> - y						## Remove/erase the package
+	
+	apt-get update <package-name> - y						## Update the package
+	
+	apt-get update-to <package-name> = <version> - y		## Upgrade the package specific version
+	
+	apt-get upgrade <package-name> - y						## Upgrade/change the package version
+
+	apt-get downgrade <package-name> - y					## Downgrade the package version	
+			
+	apt-get dist-upgrade <package-name> -y					## Upgrades the distribution.
+	
+	apt-get purge <package-name> -y							## Removes a package along with its configuration files.
+	
+	apt-get clean -y										## Clears out the local repository of downloaded package files.
+	
+	apt-get autoremove -y									## Removes unwanted packages.
+	
+	apt-get list installed									## List which packages installed over M/C
+	
+
+	service <package-name> 	start							## start package service
+	systemctl start <package-name>
+
+	service <package-name>	stop							## stop package service
+	systemctl stop <package-name>
+
+	service <package-name>	status							## cheek Status of package service
+	systemctl status <package-name>
+
+	service <package-name>	restart							## Restart package service
+	systemctl restart <package-name>
