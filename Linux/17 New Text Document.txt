@@ -1,0 +1,45 @@
+1) On 15th August at 10:30 AM job should be executed. 
+	30 10 15 8 * * 	
+2) Every day at 11:30 PM job should be executed. 
+	30 23 * * *		
+3) Every Wednesday at 12:00 AM job should be executed. 
+	0 0 * * 3 	
+4) Every month of 15th at 12:30 PM job should be executed. 
+	30 12 15 * *	
+5) Every Wednesday & Sunday at 12:30 AM job should be executed. 
+	30 0 * * 0,3	
+6) Every month of 15th to 20th at 2:30 PM job should be executed. 
+	30 14 15-20 * *	
+7) After each and every 15 Minutes job should be executed. 
+	*/15 * * * *	
+8) Every day after each and every 30 Minutes job should be executed. 
+	*/30 * * * *	
+9) Everyday 2:00 PM to 5:00 PM, after every 15 Minutes job should be executed. 
+	*/15 14-17 * * *
+10) Every Month Monday to Friday 2:00 PM job should be executed. 
+	0 14 * * 1-5
+11) Every Month of first Saturday at 12:30 PM job should be executed. 
+	30 12 1-7 * 6
+12) Every Month of Second Saturday at 2:00 PM job should be executed.
+	0 14 8-14 * 6
+13) Every Month of last Saturday between 2:00 PM to 5:00 PM, after every 30 Minutes job should be executed
+	*/30 14-17 25-31 * 6
+	
+	
+cron jobs : 
+1. every hour of 4th dec 
+	* * 4 12 *
+2. every hour at 50 min
+	*/50 * * * 
+3. every mondays at midnight
+	0 0 * * 2
+4. every mornings 7:45 from 15th to 25th of every month.
+	45 7 15-25 * *
+5. every 2 hours
+	* */2 * * *
+6. every day of dec months at 4am 
+	0 4 * 12 *
+7. every 10 min from monday to friday.
+	*/10 * * * 1-5
+8. midnight from monday wednesday and friday
+	0 0 * * 1,3,5

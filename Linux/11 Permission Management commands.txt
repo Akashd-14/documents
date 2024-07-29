@@ -1,0 +1,65 @@
+
+## chmod command using octal
+
+	syntax
+		
+		chmod <option> filename/ dir. name
+		
+	options
+		
+		read	= r = 4
+		write	= w = 2
+		execute	= x = 1
+		
+	example
+		chmod 765 file1.txt
+		here user=7		group=6		other=5
+			7=4+2+1		6=4+2			5=4+1
+			 =r+w+x		 =r+w			 =r+x
+			 
+## chmod command using symbols
+
+	syntax
+		
+		chmod <options> filename/ dir. name
+		
+	options
+		
+		u= +-r +-w +-x
+		g= +-r +-w +-x
+		o= +-r +-w +-x
+		
+	here, 
+		= To chnage
+		+ To add
+		- To remove
+		
+	example
+		chmod u=rw,g+w,o-x file1.txt
+		
+## To change owner of a file/directory
+
+	syntax
+		chown <new owner name> file/directory name
+		
+## To change group of a file/directory
+
+	syntax
+		chgrp <new group name> file/directory name
+		
+## umask command
+
+	syntax
+		umask <options>
+		
+	options
+		0 : read, write and execute
+		1 : read and write
+		2 : read and execute
+		3 : read only
+		4 : write and execute
+		5 : write only
+		6 : execute only
+		7 : no permissions
+		-S : to see umask in symbolic form
+		-p : to see umask in octal form

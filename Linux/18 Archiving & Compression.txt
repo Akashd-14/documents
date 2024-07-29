@@ -1,0 +1,79 @@
+##Archiving and Compression ## 
+
+## Archiving
+	Archiving is the process of Bundling and Compression.
+	Bundling is the process of combining multiple files and directories (same or different sizes) into one file/place.
+	tar command is commonly used to bundle files and directories together into a single archive file.
+	
+	syntax
+		
+		tar <-options> <archive-fileName>.tar <files to be compressed>
+
+	options:
+		-c 	-> create an archive.
+		-f 	-> file name. (Compulsory option)
+		-v 	-> verbose or view.
+		-tf -> list the content from archive.
+		-x 	-> execute the content from archive.
+		-C 	-> copy content from an archive to another directory.
+		
+	Examples:
+	
+		tar -cvf archive.tar file1 file2 file3		## it combines file1,file2,file3 in a single file archive.tar
+		
+		tar -xvf archive.tar						## It extract archive.tar file in current directory & seperates file1,file2,file3
+		
+		tar -xvf archive.tar -C <path>				## It extract archive.tar file in mentioned path
+
+
+## Compression
+
+	Compression is the process of reducing the size of a file or directory.
+	Compression is a reduction in the number of bits needed to represent data.
+	Compressing data can save storage capacity, speed up file transfer, and decrease costs for storage hardware and network bandwidth.
+
+1)ZIP:
+
+	syntax
+		zip -r file.zip <fileName>		## compress the file
+		unzip -r file.zip				## Extract the file
+2)GZIP:
+	GZIP is good option for compressing a lot of data as it is quick.
+	Its memory usage is also low.
+	GZIP compression can be used by using “-z” option in tar command or by using gzipcommand.
+	GZIP compressed file can be extracted using gunzip.
+	
+	syntax
+		gzip file.zip <fileName>	## compress the file
+		gunzip file.zip				## To extract the file
+		
+3)BZIP2:
+	BZIP2 provide better compression ratio compared to GZIP but require more "CPU time" to accomplish it.
+	“-j” option in tar or bzip2 command can be used for bzip2 compression.
+	Bunzip2 is command to extract bzip2 compressed file.
+	
+	syntax
+		bzip2 file.bzip2 <fileName>		## compress the file
+		bunzip2  file.bzip2				## Extract the file
+		
+4)XZ:
+	XZ provide impressive compression ration but in cost of very high CPU and Memory usage.
+	Decompression speed is better but it also consumes a lot of memory.
+	XZ compression can be done by “-J” option in tar or xz command.
+	
+	syntax
+		xz file.xz <fileName>		## compress the file
+		unxz  file.bzip2			## Extract the file
+		
+	We can use compression command with archiving command by using below options and extensions
+	
+	No.	Name	Option		Extension		Unzip Command
+	1	gzip	-z			.tar.gz				gunzip
+	2	bzip2	-j			.tar.bz2			bunzip2
+	3	xz		-J			.tar.xz				unxz
+	
+	Examples
+		
+		tar -cjvf file.tar.bz2 <files to be compressed> 	## For archi & compressing
+		
+		tar -xJvf file.tar.xz								## For Extracting

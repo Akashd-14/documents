@@ -38,10 +38,9 @@ Files affected by newly added user:
 
 ## To modify user
 
-	usermod [username]		####modify or changes exiting user acc.
+	usermod <option> username		####modify or changes exiting user acc.
 
-	usermod <option parameters> username
-Options,
+	Options,
 -u :- user id
 -g :- primary group
 -c :- Comment
