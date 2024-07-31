@@ -74,6 +74,6 @@
 	
 	Examples
 		
-		tar -cjvf file.tar.bz2 <files to be compressed> 	## For archi & compressing
+		tar -cjvf file.tar.bz2 <files to be archived & compressed> 	## For archiving & compressing here we use j for bzip2
 		
-		tar -xJvf file.tar.xz								## For Extracting
+		tar -xJvf file.tar.xz								## For Extracting here we use J for xz command
