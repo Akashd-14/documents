@@ -2,14 +2,14 @@
 #### Process Management in Linux
 
 ## What is Process?
-	Process is any program in its excecution. ( excecution of the program)
+	Process is an excecution of any program.
 	It generally takes an input, processes it and gives us the appropriate output.
 	An active program which running now on the Operating System is known as the process.
 	
 ## Why Process Management is required-
 
 1)Resource Allocation:
-	Process management ensures efficient allocation of system resources like CPU, memory, and I/O devices to various processes, optimizing system performance and preventing resource conflicts.
+	Process management efficiently allocate system resources like CPU, memory, and I/O devices to various processes, optimizing system performance and preventing resource conflicts.
 	Proper resource allocation enhances the overall responsiveness of the system by dynamically adjusting resources based on process requirements.
 
 2) Concurrency:
@@ -18,7 +18,7 @@
 
 3)Isolation:
 	Isolation in process management ensures that processes operate independently, preventing interference and maintaining system stability.
-	This separation safeguards sensitive data and enhances security by limiting the scope of potential process failures.
+	This separation secures sensitive data and enhances security by limiting the scope of potential process failures.
 
 4) Process Prioritization:
 	Process management prioritizes processes based on their importance and urgency, ensuring critical tasks receive more CPU time and resources.
@@ -31,19 +31,19 @@
 ## Types of Processes:
 
 1) Foreground Processes:
-	they run on the screen and need input from the user.
-	also referred to as interactive processes
+	This processes run on the screen and need input from the user.
+	also referred as interactive processes.
 
 2) Background Processes:
-	they run in the background and usually do not need user input.
-	referred to as non-interactive or automatic processes
+	This processes run in the background and usually do not need user input.
+	referred as non-interactive or automatic processes.
 	for example: Antivirus.
 
 	Commands-
 	
-	&		## Starts the command immediately in the background.
+	&		## To starts the command immediately in the background.
 
-	Ctrl+Z	## Stops the job temporarily so that it can be managed.
+	Ctrl+Z	## Stops the job temporary so that it can be managed.
 	
 	Ctrl+C	## Can be used to cancel the current interactive job
 
@@ -55,14 +55,14 @@
 	
 3) Daemon Process-
 	It is a type of background process that runs continuously, typically providing system services or performing tasks without direct user interaction even if terminating terminal.
-	example- init, crond
+	example- init, crond, web service, database
 
 4) Parent Process and Child Process-
 	The parent process is the process that creates another process.
 	A child process is a process that is created by another process, known as its parent process.
 
 	PID-
-		Every process in the system is assigned a unique numeric identifier called a Process ID (PID).
+		Every process in the system is assigned with a unique numeric identifier called a Process ID (PID).
 		PIDs are used by the operating system to manage and identify processes.
 		
 		syntax
@@ -98,7 +98,7 @@
 	
 	5) Terminated:
 		Eventually, the process completes its execution or is terminated.
-		When a process terminates, it releases the resources it was using, including memory, files, and other system resources.
+		When a process terminates, it releases the resources it was using, including memory, files and other system resources.
 		The operating system removes the process from its process table and deallocates its resources, marking the end of its lifecycle.
 		
 	6)Zombie Process:

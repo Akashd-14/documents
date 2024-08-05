@@ -2,35 +2,39 @@
 
 	more command provides line by line navigation and page by page navigation in downward direction but, upward scrolling not possible.
 	
-more filename
+	syntax
+		more <filename>
 
 ## less ##
  
 	less command allow navigation keys for scrolling up and down, shows only content of the file on screen.
 	
-less filename
+	syntax
+		less <filename>
 
 ## head ##
 
-	head command show few lines from top of the file. 
+	head command used to show few lines from top of the file. 
 	if head command is used without any option, it will show top ten lines by default. –n is used to give count of lines to be shown.
 
-head <option> <filename>
+	syntax
+		head <option> <filename>
 
-head filename			## It will show top 10 lines of the content
+		head <filename>			## Bydefault it will show top 10 lines of the content
 
-head -n 5 filename		## It will show top 5 lines of the content
+		head -n <filename>		## It will show top no. of lines of the content
   
 ## tail ##
 
-	tail command show few lines from bottom of file.
-	if tail command is used without any option, it will show top ten lines by default. –n is used to give count of lines to be shown.
+	tail command used to show few lines from bottom of file.
+	if tail command is used without any option, it will show last ten lines by default. –n is used to give count of lines to be shown.
 	
-tail <option> <filename>
+	syntax
+		tail <option> <filename>
 
-tail filename			## It will show top 10 lines of the content
+		tail <filename>			## It will show bottom 10 lines of the content
 
-tail -n 5 filename		## It will show top 5 lines of the content
+		tail -n <filename>		## It will show bottom 5 lines of the content
 
 
 
@@ -56,21 +60,24 @@ same as manual page
 	
 ## Single Redirector (>):
 	
-	Redirect the output of a command to a file, overwriting the file if it exists.
+	It Redirects the output of a command to a file, it will overwriting the file if it exists.
 
-command > filename.txt
+	syntax
+		command > filename
 
 ## Double Redirector (>>):
 
-	Append the output of a command to a file, without overwriting existing content
+	It Appends the output of a command to a file, without overwriting existing content.
 
-command >> filename.txt
+	syntax
+		command >> filename
 
 ## Piping (|):
 	
 	It redirect the output of one command as input to another command.
 	
-command1 | command2
+	syntax
+		command1 | command2
 
 	e.g.- history | head -5
 	

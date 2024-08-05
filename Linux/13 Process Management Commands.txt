@@ -9,11 +9,11 @@
 	syntax
 	ps <options>
 	
-	a: This option shows all the running processes.
-	e: This option displays information about every process on the system.
-	f: This option generates a full listing, providing more details about the processes and their relationships.
-	u: This option displays the owner of each process and additional information like CPU and memory usage.
-	x: This option lists all processes regardless of whether they are associated with a terminal.
+	a: This option shows all the running processes (PID, TTY, TIME, CMD)
+	e: This option displays information about every process on the system (PID, TTY, TIME, CMD)
+	f: This option generates a full listing of running processes providing more details about the processes and their relationships. (UID, PID, PPID, C, STIME, TTY, TIME, CMD)
+	u: This option displays the owner of each process and additional information like CPU and memory usage. (USER, PID, %CPU, %MEM, VSZ, RSS, TTY, STAT, START, TIME, COMMAND)
+	x: This option lists all processes regardless of whether they are associated with a terminal. (PID, TTY, STAT, TIME, COMMAND)
 	aux: This option shows a detailed list of all processes running on the system, including those owned by other users.
 	
 ## pstree
@@ -21,7 +21,8 @@
 	
 	syntax:
 	 pstree
-
+	 pstree -p	## shows process id 
+	 
 ## top
 	top command is used to show the Linux processes.
 	it provides dynamic real-time view of running system.
@@ -42,8 +43,8 @@
 	The niceness value ranges from -20(highest prioprity) to 19(lowewst priority).
 
 	Syntax:
-		nice <options> <command>
-		Ex nice -n 10 command
+		nice <value> <command>
+		Ex nice -10 command
 		
 ## To check nice value:
 	

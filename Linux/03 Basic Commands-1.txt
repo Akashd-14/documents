@@ -1,11 +1,11 @@
 
-pwd			## print working directory Displays, the current working directory, shwoing the full path to our current location in the file system.
+pwd			## print the current working directory, shwoing the full path to our current location in the file system.
 		
 tty			## This command displays current user terminal number.
 
-who am i	## Display current user details.
+who am i	## Display current user details like username, terminal number & login time & date.
 
-whoami		## It simply prints the username of the currently logged-in user.
+whoami		## It simply prints the curent username
 
 w			## Display all current user details with their time schedule.
 			## It Provides a summary of information about currently logged-in users, including details like usernames, terminal, remote host (if applicable), login time, idle time, JCPU (total time used by all processes attached to the terminal), PCPU (total time used by the current process), and what user currently doing.
@@ -20,6 +20,8 @@ Clear / ctrl+l		## It clears screen but not background data.
 df -h 		## It shows disk usage and filesystem infomation.
 
 lsblk		## It shows block devices and partitions.
+
+du -sch		## It shows current directory size
 
 cal	/ cal -1			## It displays current month of calendar. This command is used to display a calendar in the terminal. By default, it shows the calendar for the current month.
 

@@ -39,26 +39,28 @@ tac filename							## To see the content of the file in bottom to top format.
 	
 touch filename				## To create empty file
 
-touch file1 file2 file3		## To createte multiple empty files
+touch file1 file2 file3		## To create multiple empty files
+
+touch file{1..n}			## Create empty files starting with same name
 	
-# Timestamp
+## Timestamp
 	
-	It is the time that shows when the file was created updated & when recently accessed.
-	There are 3 types of timestamp as below
+	It is the time that shows when the file was created, updated & when recently accessed.
+	There are 3 types of timestamp as below:
 	
 1) Access Time
 	
-	It shows that whenwas the file last time accessed or opened.
+	It shows that when was the file last time accessed or opened.
 	we can update access time of the file using
 	
-touch -a filename
+	touch -a <filename>
 
 2) Modify Time
 
-	It shows that last when the file was modified last time.
+	It shows that when the file was modified last time.
 	We can change the modified time of the file using 
 	
-touch -m filename
+	touch -m <filename>
 
 3) Change Time
 
@@ -68,7 +70,7 @@ touch -m filename
 
 To get timestamp of a file we use
 
-	stat filename
+	stat <filename>
 	
 	o/p = access : Date		Time
 		  modify : Date		Time

@@ -20,7 +20,7 @@
 	
 ## Yellowdog Updater Modified (yum) ##
 	
-	It is used to install, update, remove, ununstall or downgrade any software or package in linux machine.
+	It is used to install, update, remove, uninstall or downgrade any software or package in linux machine.
 	It's package was installed in a linux machine.
 	
 	commands- 

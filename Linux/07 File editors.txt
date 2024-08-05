@@ -17,6 +17,7 @@
 	2. kedit: -
 		It is similar to gedit but contain some advance features.
 		Generally, we have to install kedit separately to use it.
+		It is same as that of notepad++ in windows.
 	
 	3. Open office: -
 		Open Office is same as that of MS Office.
@@ -36,14 +37,14 @@
 	It is easily available in all versions of linux.
 	
 	Thus, it contains some additional features. These editors works in four different modes,
-		1. Insert mode
-		2. Ex-mode (Execute)
-		3. Command mode
+		1. command mode
+		2. Insert mode
+		3. Ex-mode (Execute)
 		4. Visual mode
 	
 	steps to create/edit file
 	
-	vi/vim/vm filename		## create new file or open existing file
+	vi/vim/vm <filename>	## create new file or open existing file
 	
 	## Command Mode-
 		This is default mode. Press esc to exit from any mode and enter into command mode.

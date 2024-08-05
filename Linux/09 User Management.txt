@@ -3,7 +3,7 @@
 
 	A user is a person who utilizes a computer or network service.
 	Linux is said to be secure because one user cannot access files of other user without its permission.
-	Each user is assigned an ID that is unique for each user in the operating system.
+	Each user has assigned an ID that is unique for each user in the operating system.
 
 There are three types of user:
 
@@ -14,11 +14,11 @@ There are three types of user:
 2. Super user:
 	Super users are those users who has all privileges of Linux system.
 	On all Linux systems, by default there is the user root, also known as the super user.
-	This account is used for managing Linux. Root, for instance, can create other user accounts on the system.
-	For some tasks, root privileges are required. Some examples are installing software, managing users, and creating partitions on disk devices.
+	This account is used for managing Linux. It can also create other user accounts on the system.
+	For some tasks root privileges are required. Some examples are installing software, managing users, and creating partitions on disk devices.
 
 3. Standard user:
-	local user accounts or standard user accounts are for the people who need to work on a system and who need limited access to the resources on that system.
+	Local user accounts or standard user accounts are for the people who need to work on a system and who need limited access of the resources on that system.
 	These user accounts typically have a password that is used for authenticating the user to the system.
 
 ## Adding New User
@@ -28,27 +28,28 @@ There are three types of user:
 	Whenever new user has been added, some files get affected. These files holds user accounts related information.
 	Also whenever new user is created, by default, its home directory has been generated.
 	
-	useradd [username]		#### Create user account.
+	useradd <username>		#### Create user account.
+	adduser <username>
 
 Files affected by newly added user:
-/etc/passwd: It store user profile related information,
-/etc/shadow: It stores user password policies
-/etc/group: It store group information.
-/etc/gshadow: Stores group password and member’s list.
+	/etc/passwd		## It store user profile related information,
+	/etc/shadow		## It stores user password policies
+	/etc/group		## It store group information.
+	/etc/gshadow	## Stores group password and member’s list.
 
 ## To modify user
 
-	usermod <option> username		####modify or changes exiting user acc.
+	usermod <option> <parameter> username		####modify or changes exiting user acc.
 
 	Options,
--u :- user id
--g :- primary group
--c :- Comment
--s :- login shell
--G :- secondary group
--l :- login name
--L :- lock user password
--U :- unlock user password
+		-u		## to change user id
+		-g 		## to change user's primary group
+		-c		## Add comment to the user
+		-s		## change login shell
+		-G		## add secondary group
+		-l		## login name
+		-L		## lock user password
+		-U		## unlock user password
 
 ## To Remove user
 
@@ -83,7 +84,7 @@ To remove a user and their home directory
 		
 	syntax
 	
-	passwd <user_name>		#### assign or change other user’s password by root user.
+	passwd <username>		#### assign or change other user’s password by root user.
 	
 ## View and change password policy
 
@@ -102,12 +103,12 @@ To remove a user and their home directory
 		chage <option> <parameter> <username>
 
 Options:
--l :- list / view password policy.
--m :- min. days between password change.
--M :- maximum days between password change.
--W :- number of days of warning.
--I :- number of inactivation days.
--E :- Expiry date of user account.
+	-l		## list / view password policy.
+	-m		## min. days between password change.
+	-M		## maximum days between password change.
+	-W		## number of days of warning before password expire.
+	-I		## number of inactivation days.
+	-E		## Expiry date of user account.
 
 ## Group Management-
 	Group is collection of user accounts that share set of permissions.
@@ -136,14 +137,16 @@ Options:
 		groupmod <option> <parameter> <groupname>
 			
 			Options,
-				-g :- Group id
-	groupmod -g <new_gid> <groupname>
-	
-			-n :- Group Name
-	groupmod -n <new_groupname> <old_groupname>
+				-g 		## to change Group id
+				-n		## to change Group Name
+		
+		groupmod -g <new_gid> <groupname>
+		groupmod -n <new_groupname> <old_groupname>
 
 	groupdel-
-		groupdel <groupname>
+	
+	syntax
+		groupdel <groupname>	## to delete secondary created group
 
 ## Password Management-
 
@@ -152,25 +155,13 @@ Options:
 		It also can be used to add members and assign admin to the group.
 		Specified in /etc/gshadow
 
-	gpasswd
-		Options:
-		
-	-a :- Add members in group
-
-	Syntax-
+	syntax
 		gpasswd -a <username> <groupname>
-
-	-M :- Set list of members in group
-
-	Syntax-
-		gpasswd -M <username1,username2,...,username> <groupname>
-
-	-A :- Assign user as group admin
-
-	Syntax-
-		gpasswd -A <username> <groupname>
-
-	-d :- To remove user from group
-
-	Syntax-
-		gpasswd -d <username> groupname>
+		
+		Options:
+			-a		## Add members in group it append the user in a group
+			-M		## Set list of members in group it will overwrite the users
+			-A		## Assign user as group admin
+			-d		## To remove user from group
+			-r		## remove the GROUP's password
+			-R		## restrict access to GROUP to its members

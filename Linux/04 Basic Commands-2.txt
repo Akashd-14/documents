@@ -29,31 +29,29 @@ uptime					## It display
 
 ## Listing ##
 
-ls			## It is used to list files and directories in a directory. It is used to list files and directories in a directory.
+ls					## It is used to list files and directories in a directory. It is used to list files and directories in a directory.
 
 ls -l / ls -n		## Displays detailed information about files, including permissions, owner, group, size, and modification time.
 
-ls -a			##Shows hidden files (those starting with a dot .).
+ls -a				##Shows hidden files (those starting with a dot .).
 
-ls -r			## Recursive. It is used to display files and directories in reverse order. It reverses the order of the sorting, showing the files or directories in descending order based on their names.
+ls -r				## Recursive. It is used to display files and directories in reverse order. It reverses the order of the sorting, showing the files or directories in descending order based on their names.
 
-ls -t			## It Sort by modification time, newest first.
+ls -t				## It Sort by modification time, newest first.
 
-ls -S			## It Shows files or directories with its size.
+ls -S /ls --size	## It Shows files or directories with its size.
 
-ls -l -s 		## allocated size of each file
+ls -l -s 			## allocated size of each file
 
-ls --size 		## allocated size of each file using long notation
+ls -lsa 			## print the size of the file in long listing format
 
-ls -lsa 		## print the size of the file in long listing format
+ls -lsh 			##size of the files in human readable format
 
-ls -lsh 		##size of the files in human readable format
+ls -l -R 			## list sub directories recursively
+	
+ls  -x		 		## list by lines
 
-ls -l -R 		## list sub directories recursively
-
-ls -l -x 		## list by lines
-
-ls -u -l -t 		## list by last access time shows newest first
+ls -u / ls -ul 		## list by last access time shows newest first
 
 
 ## Change Directory ##
@@ -96,7 +94,7 @@ rm -r directory_name				## To remove empty directory
 
 
 ## rm ##		## used to remove files.
-rm [option] filename
+rm <option> filename
 	-f : forcefully.
 	-v : verbosely.
 	-r : recursively.
@@ -104,14 +102,14 @@ rm [option] filename
 
 ## Moving and Copying ##
 
-mv file1 file2						## move data from one file to another file
+mv file1 file2						## move data from file1 to file2
 
-mv file1 new_file_name 					## rename files and directories 
+mv <filename> <new_file_name> 		## rename files and directories 
 
-mv file_name destination/				## move file to a specific destination
+mv <file_name> >destination>		## move file to a specific destination
 
 cp file1 file2						## To copy files and directories from one location to another.
-							## It can be used to  create duplicate files and create backups.
+cp <file_name> >destination>		## It can be used to create duplicate files and create backups.
 
 ## Echo commnand ##
 echo "massage"			## For printing messages or information to the console.

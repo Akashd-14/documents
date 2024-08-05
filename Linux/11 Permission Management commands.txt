@@ -61,5 +61,5 @@
 		5 : write only
 		6 : execute only
 		7 : no permissions
-		-S : to see umask in symbolic form
-		-p : to see umask in octal form
+		-S : to see umask value in symbolic form
+		-p : to see umask value in octal form

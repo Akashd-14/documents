@@ -7,7 +7,7 @@
 	
 	syntax
 		
-		tar <-options> <archive-fileName>.tar <files to be compressed>
+		tar <-options> <archive-fileName>.tar <files to be archived>
 
 	options:
 		-c 	-> create an archive.
@@ -30,7 +30,7 @@
 
 	Compression is the process of reducing the size of a file or directory.
 	Compression is a reduction in the number of bits needed to represent data.
-	Compressing data can save storage capacity, speed up file transfer, and decrease costs for storage hardware and network bandwidth.
+	Compressing data can save storage capacity, speed up file transfer and decrease costs for storage hardware and network bandwidth.
 
 1)ZIP:
 
@@ -44,8 +44,8 @@
 	GZIP compressed file can be extracted using gunzip.
 	
 	syntax
-		gzip file.zip <fileName>	## compress the file
-		gunzip file.zip				## To extract the file
+		gzip file.gz <fileName>	## compress the file
+		gunzip file.gz			## To extract the file
 		
 3)BZIP2:
 	BZIP2 provide better compression ratio compared to GZIP but require more "CPU time" to accomplish it.
@@ -53,8 +53,8 @@
 	Bunzip2 is command to extract bzip2 compressed file.
 	
 	syntax
-		bzip2 file.bzip2 <fileName>		## compress the file
-		bunzip2  file.bzip2				## Extract the file
+		bzip2 file.bz2 <fileName>		## compress the file
+		bunzip2  file.bz2				## Extract the file
 		
 4)XZ:
 	XZ provide impressive compression ration but in cost of very high CPU and Memory usage.
@@ -63,7 +63,7 @@
 	
 	syntax
 		xz file.xz <fileName>		## compress the file
-		unxz  file.bzip2			## Extract the file
+		unxz  file.xz			## Extract the file
 		
 	We can use compression command with archiving command by using below options and extensions
 	
@@ -76,4 +76,4 @@
 		
 		tar -cjvf file.tar.bz2 <files to be archived & compressed> 	## For archiving & compressing here we use j for bzip2
 		
-		tar -xJvf file.tar.xz								## For Extracting here we use J for xz command
+		tar -xJvf file.tar.xz										## For Extracting here we use J for xz command
