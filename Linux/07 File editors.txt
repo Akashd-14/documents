@@ -36,6 +36,13 @@
 	It is specially useful for editing programms. Mainly used for UNIX programmer.
 	It is easily available in all versions of linux.
 	
+	Cursor Movement
+		J 	for upward navigation
+		K 	for downward navigation
+		H 	for leftward navigation
+		L 	for rightward navigation
+
+	
 	Thus, it contains some additional features. These editors works in four different modes,
 		1. command mode
 		2. Insert mode
@@ -79,6 +86,17 @@
 	
 	## Insert Mode-
 		you can actually insert or edit text.
+		Following are commands to enter in insert mode 
+		
+		i	 insert text at current cursor position
+		I	 insert text at start of the current line
+		a	 insert text just right of the current character
+		A	 insert text at end of the current line
+		o	 insert new line below the current line
+		O	 insert new line above the current line
+		r	 it replaces single character
+		R	 replace multiple characters
+
 		
 	## Visual Mode-
 		this mode is used for selection.
@@ -94,17 +112,18 @@
 	## Ex-mode-
 		special executing mode.
 		Use ‘:’ to enter into ex-mode.
-		:q 			quit without saving
-		:w 			save and stay in file
-		:wq or :x	save and quit
-		:q!			quit without saving forcefully
-		:wq! 		save and quit forcefully
-		:/ 			Highlight word/string/character
-		:nohl 		remove highlight
-		:%s///g 	find and replace old word with new word
-		:set nu 	set line numbers
-		:set nonu 	remove line numbers
-	
+		:q 				quit without saving
+		:w 				save and stay in file
+		:wq or :x		save and quit
+		:q!				quit without saving forcefully
+		:wq! 			save and quit forcefully
+		:/<word> 		Highlight word/string/character
+		:nohl 			remove highlight
+		:%s/old/new/g 	find and replace old word with new word
+		:set nu 		set line numbers
+		:set nonu 		remove line numbers
+		:!<command>		Execute any command on terminal without leaving editor
+
 ## nano Command ##
 
 	It is used to create & edit a file.

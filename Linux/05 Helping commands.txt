@@ -40,17 +40,29 @@
 
 ## Helping Commands ##
 
+## which ##
+	
+	this command is used to check path of command
+	
+	syntax
+		which <command>
+
 ## man ##
 
 	Mannual page
 		It is form of documentation in Unix-like operating systems that provides detailed information about a specific command, utility, or function.
 		These mannual pages serve as a reference guide, offering users comprehensive information on how to use a particular command or program.
 		Access man page by using man command 
-		
+	
+	syntax
+		man <command>
 		
 ## info ##
-
-same as manual page
+	
+	It is similar to man command
+	
+	syntax
+		info <command>
   
 # Redirectors ##
 

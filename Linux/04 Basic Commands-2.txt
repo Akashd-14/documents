@@ -33,7 +33,7 @@ ls					## It is used to list files and directories in a directory. It is used to
 
 ls -l / ls -n		## Displays detailed information about files, including permissions, owner, group, size, and modification time.
 
-ls -a				##Shows hidden files (those starting with a dot .).
+ls -a				## Shows hidden files (those starting with a dot .).
 
 ls -r				## Recursive. It is used to display files and directories in reverse order. It reverses the order of the sorting, showing the files or directories in descending order based on their names.
 
@@ -41,11 +41,11 @@ ls -t				## It Sort by modification time, newest first.
 
 ls -S /ls --size	## It Shows files or directories with its size.
 
-ls -l -s 			## allocated size of each file
+ls -ls	 			## allocated size of each file with long listing
 
 ls -lsa 			## print the size of the file in long listing format
 
-ls -lsh 			##size of the files in human readable format
+ls -lsh 			## size of the files in human readable format
 
 ls -l -R 			## list sub directories recursively
 	
@@ -56,13 +56,13 @@ ls -u / ls -ul 		## list by last access time shows newest first
 
 ## Change Directory ##
 
-cd ..			## Change Current directory to parent/ previous directory
+cd ..				## Change Current directory to parent/ previous directory
 
-cd ../..		## Move two directories up / back from where we are now.
+cd ../..			## Move two directories up / back from where we are now.
 
-cd -			## Switch back to the previous directory where we worked earlier.
+cd -				## Switch back to the previous directory where we worked earlier.
 
-cd ~ /cd - / cd		## Move to the user’s home directory from anywhere
+cd ~ / cd			## Move to the user’s home directory from anywhere
 
 cd /usr/local		## Change from the current directory to /usr/local.
 
@@ -92,9 +92,11 @@ rm -rf directory_name				## To delete non-empty directory
 
 rm -r directory_name				## To remove empty directory
 
+rm -f filename						## To remove non-empty file
+
 
 ## rm ##		## used to remove files.
-rm <option> filename
+rm <option> filename/directory
 	-f : forcefully.
 	-v : verbosely.
 	-r : recursively.

@@ -1,6 +1,7 @@
 ## Search and Filter utility in Linux ##
 
-	Search utilities are used to search files from the system where as filter utilities filters the output. Following are some filter tools that can we use:
+	Search utilities are used to search files from the system where as filter utilities filters the output.
+	Following are some filter tools that can we use:
 
 ## sort
 	Sorts the lines alphabetically by default but there are many options available to modify the sorting mechanism.
