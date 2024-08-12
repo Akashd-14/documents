@@ -1,0 +1,45 @@
+
+## Types Of Cloud Computing Models
+## Layers of Cloud Computing
+
+In general, Cloud Computing Models are widely classified into 4 types. They are as follows:
+
+1. IaaS (Infrastructure as a Service)
+	It is the basic layer of cloud computing.
+	It provides scalable and virtualized computing resources like servers, storage, and networking over the internet.
+	In this service, users can have full control over the infrastructure, having customization and management access of virtual machines, storage, and networking components.
+
+2. PaaS (Platform as a Service)
+	It provides a platform or a environment to build, deploy and manage applications without dealing with the underlying infrastructure.
+	It offers tools and services such as development frameworks, databases and middleware streamlining the application development lifecycle.
+
+3. SaaS (Software as a Service)
+	SaaS elivers software applications over the internet on a subscription basis. 
+	It eliminating the need for users to install, maintain, or update the software locally.
+	With this service users can access the applications from any device with an internet connection, enabling flexibility and accessibility.
+
+4. Serverless Computing
+	Serverless computing provides abstracts for server management, facilitating users to focus completely on developing and deploying code without managing servers.
+	It automatically scales the resources based on demand, reducing the operational and overhead costs, and enabling rapid development and deployment of applications.
+	
+Difference Between IaaS, PaaS, SaaS And Serverless
+The following are the differences between IaaS, PaaS, SaaS and Serverless:
+
+	Aspect				IaaS						PaaS						SaaS						Serverless Computing
+	
+Infrastructure	It provides virtualized		It provides the platform		It is used for fully		It provides an abstracted
+				computing resources	 		for application development		developed software appl		server management
+
+Management		Users manage virtual M/C	Platform provider manages		Vendor fully manages and	Developers focus only 
+				storage, networking	 		underlying infrastructure		maintains the software		on writing code
+				
+Customization	High level of				Limited customization			Minimal customization		Focuses on code,
+				customization	 			options														less on infrastructure
+
+Flexibility		High						Moderate						Low							High
+
+Scalability		Scalable at 				Scalable at application			Scalable at user			Automatically scales
+				infrastructure level		level							level						based on demand
+
+Examples		Amazon Web Services (AWS)	Google App Engine				Salesforce					AWS Lambda, Azure Functions,
+				Microsoft Azure	 			Heroku							Amazon Workspace	 		Google Cloud Functions

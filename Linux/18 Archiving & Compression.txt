@@ -1,7 +1,7 @@
 ##Archiving and Compression ## 
 
 ## Archiving
-	Archiving is the process of Bundling and Compression.
+	Archiving is the process of Bundling.
 	Bundling is the process of combining multiple files and directories (same or different sizes) into one file/place.
 	tar command is commonly used to bundle files and directories together into a single archive file.
 	
