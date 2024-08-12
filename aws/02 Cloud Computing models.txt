@@ -2,7 +2,8 @@
 ## Types Of Cloud Computing Models
 ## Layers of Cloud Computing
 
-In general, Cloud Computing Models are widely classified into 4 types. They are as follows:
+In general, Cloud Computing Models are widely classified into 4 types. 
+They are as follows:
 
 1. IaaS (Infrastructure as a Service)
 	It is the basic layer of cloud computing.
@@ -43,3 +44,19 @@ Scalability		Scalable at 				Scalable at application			Scalable at user			Automa
 
 Examples		Amazon Web Services (AWS)	Google App Engine				Salesforce					AWS Lambda, Azure Functions,
 				Microsoft Azure	 			Heroku							Amazon Workspace	 		Google Cloud Functions
+				
+
+# AWS Global Infrastructure-
+
+## Region -
+	It is a physical location where data centers are present.
+	There are 33 regions are available in aws.
+	
+## Data Center -
+	It is a physical and storage infrastructure along with severs storage subsystems, networking, switches, routers, firewall, cabling and physical racks.   
+
+## Availability Zones -
+	It is a multiple isolated location in a region.
+	It contains one or more discrate data centers with redundant power, network and connectivity.
+	AWS provides 105 AZ's within 33 geographic regions, and planned for 21 more AZ's.
+	In India there are total 6 AZ's are present, where 2 in Mumbai and Chennai, Delhi, Hyderabad and Bengalore contains one each.

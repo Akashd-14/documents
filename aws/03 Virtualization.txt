@@ -27,4 +27,3 @@
 			The type 2 hypervisor is installed on an operating system. 
 			Type 2 hypervisors are suitable for end-user computing.
 			
-https://github.com/Akashd-14/documents/blob/main/aws/Hypervisor.png
