@@ -1,0 +1,52 @@
+
+## Key Pair ##
+	It is a set of security credentials that we use to prove our identity when connecting to an Amazon EC2 instance.
+	When we launch an instance we create a pair of keys one is public key & 2nd key is private key which is credential to connect to the server.
+	Amazon EC2 stores the public key on our instance, and provide private key to user, so he can access server using this key.
+	It's important that we store our private key in a secure place because anyone who possesses our private key can connect to our instances that use the key pair.
+	For Linux instances, the private key allows us to securely SSH into our instance. 
+	For Windows instances, the private key is required to decrypt the administrator password, which we then use to connect to our instance.
+	To save the private key in a format that can be used with OpenSSH, we choose pem.
+	To save the private key in a format that can be used with PuTTY, we choose ppk.
+	
+## Security Group ##
+	A security group acts as a virtual firewall for our EC2 instances to control incoming and outgoing traffic.
+	Inbound rules control the incoming traffic to our instance, and outbound rules control the outgoing traffic from our instance. 
+	When we launch an instance, you we specify one or more security groups.
+	They are fundamental of network security in AWS.
+	They control how traffic allowed into or out of our EC2 instance.
+	Security group only contains rules.
+	Security groups can be reference by IP or another security group.
+	By default EC2 associates our instance with a security group that allows no inbound traffic, we can create security group that allows our EC2 instance to accept certain traffic.
+
+## They regulate
+	Access to port
+	Authorized IP ranges - IPV4 & IPV6
+	Control of inbound network (other > Instance)
+	Control of outbound network (Instance > other)
+	We can attach to multiple instances at a time.
+	They are locked down to a region / VPC combination i.e. we need to re-created security group for different regions and VPC combination.
+	If our application is not accessible (time out error) then it is a security group issue.
+	All inbound traffic is blocked by default.
+	All outbound traffic is authorized by default.
+	
+Some Security group rules:-
+
+1) Web server rules
+	80 (HTTP) - access unsecurred websites.
+	443 (HTTPS) - access secured websites.
+
+2) Rules to connect to instance from our computer
+	22 (SSH)(secure shell) - Log into a linux instance
+	3389 (RDP) (Remote Desktop Protocol) - Log into windows instances.
+
+3) Database server rules:-
+	1433 (MS SQL) - To access microsoft SQL Server.
+	3306 (MYSQL/ Aurora) - Access MYSOL / Aurora Database.
+	5439 (Redshift) - Access Amazon Redshift cluster Database
+	5432 (PostgresoL) - Access a postgresel Database.
+	1521 (Orade) - Access an Oracle Database.
+
+4) Amazon EFS rules:-
+	2049 (NFS) (Network File System) - access biles over a network like they access local storage (53)
+	21 (FTP)(File Transfer Protocol) - uploads files into a file share

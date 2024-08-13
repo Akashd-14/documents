@@ -1,0 +1,76 @@
+## EC2 instance purchasing option 
+	Amazon EC2 provide the following purchasing option to enable we to optimize our cost based on our needs
+	
+1) On-Demand Instances:-
+	Pay for what we use. 
+	Linux billing per second, after the first Minute
+	All other operating systems billing per hour
+	It has highest cost, but no upfront payment.
+	No long term commitment.
+	We use these instances for application with short term, irregular workload that cannot be interrupted.
+	We have full control over its lifecycle i.e. we decide when to start, launch, stop, hibernate, reboot or terminate it.
+	
+2) EC2 Reserved Instances:-
+	They provide with significant saving on our Amazon EC2 cost compared to on demand instance pricing.
+	These are not physical instances, but rather billing discount applied to the use of on-demand instances in our account.
+	It gives up to, 72% discount compared to on-demand instances.
+	Reservation period:-
+		1 year 	=	+discount
+		3 years =	3+discount
+	Purchasing option:-
+		No upfront/partial upfront 	= +discount
+		all upfront					= 2+discount
+	It reserves a specific instance type
+	Recommended for steady state usage application (thick database).
+	They have two types of class:-
+		convertible reserved instances
+		standard/scheduled reserved instances 
+	
+		1) Convertible reserved instance:-
+			can change EC2 instance type.
+			Can't be sold in the reserved instance marketplace. 
+			Can't be bought in the reserved instance marketplace.
+			It gives up to 45% discount.
+		
+		2) Standard scheduled reserved instances:-
+			Can't be change instance type
+			Can be sold in the reserved instance marketplace
+			Can be bought in reserved instance marketplace.
+			Launch within the window, we reserve.
+			When we required a fraction of day/week/month.
+			Commitment for one year only.
+
+3) EC2 Spot Instances:-
+	They uses spare EC2 cpacity that is available for less than on-demand.
+	It gives discount upto 90% compared to on-demand.
+	Instances that we can loss at any point of the time, if our maximum price is less than the current spot price.
+	It is the most cost efficient instance in AWS.
+	They are suitable for data analysis, batch job, background processing and operational task workload with flexible start and end time.
+	They are not suitable for critical jobs and databases.
+
+4) EC2 Dedicated Host:-
+	It is a physical server with EC2 instance capacity fully dedicated to our use.
+	They can help to address compilance requirements and reduce cost by allowing to use our existing server-bound software licences, pre-socket, pre-cover or per VM software licences, including windows servers, Microsoft Sql Server, SUSE and Linux Enterprises Server.
+	They allocated for our account for a 3 years period reservation And they are more expensive.
+	Useful for software that have complicated licencing model BYOL (bring your own licence) or for companies that have strong regularity or compliance needs.
+	
+5) EC2 Dedicated Instances:-
+	These are Amazon EC2 instances that run in a virtual private cloud (VPC) on hardware that is dedicated to a single customer.
+	They belongs to different AWS accounts are physically isolated at a hardware level, even if those accounts are linked to a single payer account.
+	They might share hardware with other instances from the same AWS account.
+	No control over instance placement (can move hardware after stop/start).
+	
+## Which purchasing option is right for me:-
+
+1) On-Demand Instances:-
+	It is like to coming and staying in a resort whenever we like, we pay the full price.
+
+2) Reserved Instances:-
+		It like planning ahead and if we plan to stay for a long time, we may get a good discount.
+		
+3) Spot Instances:-
+	The hotel allow people to bid for the empty room and the highest bidder keeps the room.
+	We can get kicked out at anytime.
+	
+4) Dedicated Host:-
+	We book an entire building of the resort.

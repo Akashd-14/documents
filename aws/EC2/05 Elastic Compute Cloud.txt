@@ -1,17 +1,16 @@
 
 ## Amazon EC2 (Elastic Compute Cloud)
 
-EC2 is the one of the most popular service. of AWS.
+EC2 is the one of the most popular service of AWS provides virtual scalable computing capacity in AWS Cloud.
+Using EC2 we can eliminates our need to invest in hardware upfront, so we can develop and deploy applications faster.
+We can use Amazon EC2 to launch as many or as few virtual servers as per our need, configure Security, networking & manage storage.
+It enables to scale-up or scale-down to handle change in requirements or spikes in popularity, reducing our need to forecast traffic.
 It is Infrastructure as a Service.
-It mainly consist in the capability of
+ainly consist in the capability of
 	Rental virtual machines (EC2)
 	Storing data on virtual drives (EBS)
 	Distributing load across machines (ELB)
 	Scalling the service using an auto-scalling group (ASG)
-	It provides scalable computing capacity in AWS.
-	Using EC2 we can eliminates our need to invest in hardware upfront, so we can develop and deploy applications faster.
-	We can use Amazon EC2 to launch as many or as few virtual servers as per our need, configure Security, networking & manage storage.
-	It enables to scale-up or scale-down to handle change in requirements or spikes in popularity, reducing our need to forecast traffic.
 
 ## Features of Amazon EC2 :-
 	It provides following features:

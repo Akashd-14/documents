@@ -1,0 +1,52 @@
+
+## Amazon machine image (AMI)
+
+	An AMI is supported and maintained image provided by AWS that provides the information required to launch an instance.
+	We must specify an AMI when we launch an instance.
+	We can launch multiple instances from single AMI when we require multiple instances with same configuration.
+	We can use different AMI's to launch instances when we require instances with different configurations.
+	
+	It includes the following 
+		1) One or more Amazon EPS snapshot or for instance store blocked AMI's a template for root volume of the ins.
+		2) Launch permission that control which aws accounts can use the AMI to launch instance.
+		3) A block device mapping that specifies the volume to attach to the instance when it is launched.
+	
+	Ami's are a customization of an EC2 instance.
+		1) We add our own software configuration operating system and monitoring etc.
+		2) Faster boot/configuration time because of all our softwares are pre packaged.
+	
+	Ami's are built for specific region and can be copied across multiple regions.
+	We can launch EC2 instances from
+		1) A public AMI i.e. provided by AWS.
+		2) Our own AMI i.e. we make and maintain them ourself.
+		3) An marketplace AMI i.e. an ami someone else made and potentially made.
+		
+## Ami Process (From an EC2 instance)
+	1) Create an EC2 instance and customise it.
+	2) stop instance for (data migration).
+	3) Create an AMI it will also create EBS snapshot.
+	4) Launch instances from created AMI.
+	
+## EC2 sizing and configuration option:-
+	It has following configurations
+	
+		1) Operating systems:- Linux, Windows, Mac OS, Ubuntu etc.
+		2) Compute Power and cores (cpu)
+		3) Random Access Memory (RAM)
+		4) Storage space:-
+			network attached (EBS and EFS)
+			Hardware (EC2 instance storage)
+		5) Network card:- speed of the card, public ip address
+		6) Firewall rules:- security group
+		7) Bootstrap script:- EC2 user data (configure at first launch)
+		
+## EC2 user data:-
+	It is possible to bootstrap our instances using an EC2 user data script.
+	Bootstrapping means launching command when a machine star.
+	That script is only run once at the instance first start.
+	EC2 user data script runs with the root user only. 
+	EC2 user data is used to automate boot task such as
+		Installing updates
+		Installing softwares
+		Download common files from Internet
+		Anything we can think of
