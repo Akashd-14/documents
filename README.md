@@ -19,10 +19,10 @@ This repository contains detailed documentation for several DevOps tools. The ai
 ## Tools Covered
 
 - Linux
+- AWS
 
 ## Upcomming Tools
 
-- AWS
 - Git
 - Github
 - Docker
