@@ -23,8 +23,8 @@
 	It reserves a specific instance type
 	Recommended for steady state usage application (thick database).
 	They have two types of class:-
-		convertible reserved instances
-		standard/scheduled reserved instances 
+		1) convertible reserved instances
+		2) standard/scheduled reserved instances 
 	
 		1) Convertible reserved instance:-
 			can change EC2 instance type.
@@ -52,7 +52,7 @@
 	It is a physical server with EC2 instance capacity fully dedicated to our use.
 	They can help to address compilance requirements and reduce cost by allowing to use our existing server-bound software licences, pre-socket, pre-cover or per VM software licences, including windows servers, Microsoft Sql Server, SUSE and Linux Enterprises Server.
 	They allocated for our account for a 3 years period reservation And they are more expensive.
-	Useful for software that have complicated licencing model BYOL (bring your own licence) or for companies that have strong regularity or compliance needs.
+	Useful for software that have complicated licencing model BYOL (bring our own licence) or for companies that have strong regularity or compliance needs.
 	
 5) EC2 Dedicated Instances:-
 	These are Amazon EC2 instances that run in a virtual private cloud (VPC) on hardware that is dedicated to a single customer.
@@ -60,6 +60,19 @@
 	They might share hardware with other instances from the same AWS account.
 	No control over instance placement (can move hardware after stop/start).
 	
+6) Savings Plans:-
+	Savings Plans offer a flexible pricing model that provides savings on AWS usage. We can save up to 72% on our AWS compute workloads.
+	SageMaker Savings Plans provide us with lower prices for our Amazon SageMaker instance usage, regardless of our instance family, size, component, or AWS Region.
+	Savings Plans provide savings beyond On-Demand rates in exchange for a commitment of using a specified amount of compute power (measured per hour) for a one or three year period.
+	We can pay for our commitment using All upfront, Partial upfront, or No upfront payment options.
+	We have two saving plans as below:-
+		1) Compute Savings Plans:-
+			It provide the most flexibility and prices that are up to 66 percent off of On-Demand rates. 
+			These plans automatically apply to our EC2 instance usage, regardless of instance family, size, region, os or tenancy.
+			
+		2) EC2 Instance Savings Plans:-
+			It provide savings up to 72 percent off On-Demand, in exchange for a commitment to a specific instance family in a chosen AWS Region (for example, M5 in Virginia).
+			These plans automatically apply to our EC2 instance usage, regardless of size, os or tenancy within the specified family in a Region..
 ## Which purchasing option is right for me:-
 
 1) On-Demand Instances:-
