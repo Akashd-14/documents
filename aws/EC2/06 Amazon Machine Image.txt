@@ -10,6 +10,23 @@
 		1) One or more Amazon EPS snapshot or for instance store blocked AMI's a template for root volume of the ins.
 		2) Launch permission that control which aws accounts can use the AMI to launch instance.
 		3) A block device mapping that specifies the volume to attach to the instance when it is launched.
+		4) Operating system
+		5) Processor architecture
+		
+## AMI Types
+	
+	1) Quick Start AMIs (46)
+		 Provided by AWS
+		 Commonly used AMIs
+
+	2) My AMIs
+		Created by own or by an organization for personal use
+
+	3) AWS Marketplace AMIs (11061)
+		AWS & trusted third-party AMIs
+		
+	4) Community AMIs (500)
+		Published by anyone
 	
 	Ami's are a customization of an EC2 instance.
 		1) We add our own software configuration operating system and monitoring etc.
