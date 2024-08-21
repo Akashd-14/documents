@@ -10,6 +10,14 @@
 	We use these instances for application with short term, irregular workload that cannot be interrupted.
 	We have full control over its lifecycle i.e. we decide when to start, launch, stop, hibernate, reboot or terminate it.
 	
+	Use cases for On-Demand Instances include:
+	Development and testing environments: 
+		On-Demand Instances allow developers to quickly spin up resources for testing new applications or conducting experiments without the need for long-term commitments.
+	Bursty workloads: 
+		Applications that experience sudden spikes in demand can benefit from On-Demand Instances to scale up resources instantly and handle increased traffic without disruptions.
+	Prototyping:
+			Businesses can use On-Demand Instances to build prototypes, proof-of-concepts, or temporary environments for evaluating new technologies or services.
+	
 2) EC2 Reserved Instances:-
 	They provide with significant saving on our Amazon EC2 cost compared to on demand instance pricing.
 	These are not physical instances, but rather billing discount applied to the use of on-demand instances in our account.
@@ -39,28 +47,16 @@
 			Launch within the window, we reserve.
 			When we required a fraction of day/week/month.
 			Commitment for one year only.
-
-3) EC2 Spot Instances:-
-	They uses spare EC2 cpacity that is available for less than on-demand.
-	It gives discount upto 90% compared to on-demand.
-	Instances that we can loss at any point of the time, if our maximum price is less than the current spot price.
-	It is the most cost efficient instance in AWS.
-	They are suitable for data analysis, batch job, background processing and operational task workload with flexible start and end time.
-	They are not suitable for critical jobs and databases.
-
-4) EC2 Dedicated Host:-
-	It is a physical server with EC2 instance capacity fully dedicated to our use.
-	They can help to address compilance requirements and reduce cost by allowing to use our existing server-bound software licences, pre-socket, pre-cover or per VM software licences, including windows servers, Microsoft Sql Server, SUSE and Linux Enterprises Server.
-	They allocated for our account for a 3 years period reservation And they are more expensive.
-	Useful for software that have complicated licencing model BYOL (bring our own licence) or for companies that have strong regularity or compliance needs.
 	
-5) EC2 Dedicated Instances:-
-	These are Amazon EC2 instances that run in a virtual private cloud (VPC) on hardware that is dedicated to a single customer.
-	They belongs to different AWS accounts are physically isolated at a hardware level, even if those accounts are linked to a single payer account.
-	They might share hardware with other instances from the same AWS account.
-	No control over instance placement (can move hardware after stop/start).
-	
-6) Savings Plans:-
+	Use cases for Reserved Instances include:
+	Production environments:
+		Applications with consistent workloads and long-term stability benefit from Reserved Instances by securing discounted pricing and ensuring capacity availability.
+	Mission-critical applications:
+		Reserved Instances provide cost-effective infrastructure for running critical applications that require continuous uptime and reliable performance.
+	Database servers:
+		Organizations can reserve capacity for database servers to maintain consistent performance levels and optimize costs associated with data processing and storage.
+
+3) Savings Plans:-
 	Savings Plans offer a flexible pricing model that provides savings on AWS usage. We can save up to 72% on our AWS compute workloads.
 	SageMaker Savings Plans provide us with lower prices for our Amazon SageMaker instance usage, regardless of our instance family, size, component, or AWS Region.
 	Savings Plans provide savings beyond On-Demand rates in exchange for a commitment of using a specified amount of compute power (measured per hour) for a one or three year period.
@@ -72,7 +68,53 @@
 			
 		2) EC2 Instance Savings Plans:-
 			It provide savings up to 72 percent off On-Demand, in exchange for a commitment to a specific instance family in a chosen AWS Region (for example, M5 in Virginia).
-			These plans automatically apply to our EC2 instance usage, regardless of size, os or tenancy within the specified family in a Region..
+			These plans automatically apply to our EC2 instance usage, regardless of size, os or tenancy within the specified family in a Region.
+			
+		Use cases for Savings Plans include:
+		Workloads with variable usage:
+			Savings Plans are suitable for workloads with fluctuating resource demands, providing cost savings while retaining flexibility in resource allocation.
+		Multi-instance environments:
+			Businesses running diverse workloads across multiple instance types can benefit from Savings Plans' flexibility and broader coverage compared to Reserved Instances.
+		Cost optimization initiatives:
+			Savings Plans enable organizations to optimize costs across their entire AWS infrastructure by consolidating spending commitments and maximizing discounts.
+
+4) EC2 Spot Instances:-
+	They uses spare EC2 cpacity that is available for less than on-demand.
+	It gives discount upto 90% compared to on-demand.
+	Instances that we can loss at any point of the time, if our maximum price is less than the current spot price.
+	It is the most cost efficient instance in AWS.
+	They are suitable for data analysis, batch job, background processing and operational task workload with flexible start and end time.
+	They are not suitable for critical jobs and databases.
+	Use cases for Spot Instances include:
+	Batch processing: Spot
+		Instances are ideal for batch processing workloads, such as data analytics, rendering, or video transcoding, where interruptions are acceptable, and cost optimization is crucial.
+	Fault-tolerant applications:
+		Applications designed to handle instance termination gracefully can leverage Spot Instances to achieve cost savings without compromising availability or performance.
+	Testing and development:
+		Non-critical development and testing environments can utilize Spot Instances to reduce infrastructure costs while still benefiting from on-demand access to compute resources.
+
+5) EC2 Dedicated Host:-
+	It is a physical server with EC2 instance capacity fully dedicated to our use.
+	They can help to address compilance requirements and reduce cost by allowing to use our existing server-bound software licences, pre-socket, pre-cover or per VM software licences, including windows servers, Microsoft Sql Server, SUSE and Linux Enterprises Server.
+	They allocated for our account for a 3 years period reservation And they are more expensive.
+	Useful for software that have complicated licencing model BYOL (bring our own licence) or for companies that have strong regularity or compliance needs.
+	
+	EC2 Dedicated Instances:-
+	These are Amazon EC2 instances that run in a virtual private cloud (VPC) on hardware that is dedicated to a single customer.
+	They belongs to different AWS accounts are physically isolated at a hardware level, even if those accounts are linked to a single payer account.
+	They might share hardware with other instances from the same AWS account.
+	No control over instance placement (can move hardware after stop/start).
+	
+	Use cases for Dedicated Hosts include:
+	Regulatory compliance:
+		Industries with strict regulatory requirements, such as healthcare, finance, or government, may opt for Dedicated Hosts to ensure data residency, security, and compliance.
+	License optimization:
+		Applications that require specific software licenses tied to physical hardware can benefit from Dedicated Hosts to maximize license utilization and minimize costs.
+	Performance-sensitive workloads:
+		Workloads that demand consistent performance and dedicated resources, such as high-performance computing (HPC) or real-time data processing, can leverage Dedicated Hosts for enhanced control and predictability.
+	
+
+
 ## Which purchasing option is right for me:-
 
 1) On-Demand Instances:-

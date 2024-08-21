@@ -49,29 +49,43 @@ AWS has following naming convention :-
 		
 1) General Purpose: -
 
-• It provides a balance of compute, memory & networking resources & can be used for a variety of diverse workload.
-• These instances are ideal for applications such as  a web servers & code repositories.
-• It has following types:-
+	It provides a balance of compute, memory & networking resources & can be used for a variety of diverse workload.
+	It has following types:-
 	1) Mac		2) T4g		3) T3		4) T3a		5) T2		6) M6g		7) M6i	
 	8) M6a		9) M5		10) M5a		11) M5n		12) M5zn	13) M4		14) A1
 	
+	Use Cases:
+		micro services, low-latency interactive applications, small & medium database, virtual desktop environment, Website & web Application, development environment, code repositories, enterprise-level applications.
+	
+	
 2) Compute Optimized:-
 	These instance are Ideal for compute bound application that benifit from high performance processor.
-	Instances belonging to this family are well suited for batch processing workloads, media transcoding, high performance web servers, high performance computing (HPC), scientific modeling, dedicated gaming servers & ad server engines, machine learning.
 	They are available in different types as follows:-
 		1) C7g 2) C6g 3) C6gn 4) C6i 5) C6a 6) Hpc6a 7) C5 8) C5a 9) C5n 10) C4
-
+	
+	Use Cases:
+		batch processing workloads, media transcoding, high performance web servers, high performance computing (HPC), scientific modeling, dedicated gaming servers & ad server engines, machine learning, light-weight AI based application.
+	
 3) Memory optimized:-
 	These instances are designed for deliver fast performance for workloads that proccess large data set in memory.
 	They are available in different types as below:-
 		1) R69 2) R6i 3)R5 4)R5a 5) R5b 6) R5n 7) R4 8) x2gd 9) x2idn 10) x2iedn 11) x2iezn 12) X1e 13) X1 14) High memory 15) z1d
-
+	
+	Use Cases:
+		Big Data analytics, clusters running on hadoop, apache Spark.
+	
 4) Accelerated computing:- 
 	These instances are hardware accelerators, or co-processors to perform functions, such as floating point number calculations, graphics processing or data pattern maching, more efficiently than is possible in software running on CPU
 	They have following types:-
 		1) P4	2) P3	3) P2	4)DLI	5) Trn1 6) Inf1		7) G5	8) G5g	9) Gadn	10) G4ad
-		
+	
+	Use Cases:
+		parallel processing e.g., image processing, floating-point calculators, and data pattern matching, deep-learning applications and high-performance databases.
+	
 5) Storage Optimized:-
 	These instances are designed for workloads that require high sequential read and write access to very large data sets on local storage. . They are optimized to deliver tons of thousands of low-latency, random I/O operations per sound (IOPS) to application
 	They have following types:-
 		1) Im4gn	2) Is4gn	3} 14i	4) I3	5) I3en	6) D2	7) D3	8) D3en	9) H1
+		
+	Use Cases:
+		n-memory databases, data warehousing and data analytics.
