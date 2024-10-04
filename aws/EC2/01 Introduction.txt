@@ -33,7 +33,7 @@
 	No setup cost: The entire infrastructure is fully subsidized by the cloud service providers, thus there is no need to set up any hardware.
 	Infrastructure Management is not required: Using the public cloud does not necessitate infrastructure management.
 	No maintenance: The maintenance work is done by the service provider (not users).
-	Dynamic Scalability: To fulfill your company’s needs, on-demand resources are accessible. 
+	Dynamic Scalability: To fulfill our company’s needs, on-demand resources are accessible. 
 
 ## Disadvantages of the Public Cloud Model ##
 	Less secure: Public cloud is less secure as resources are public so there is no guarantee of high-level security.
@@ -42,11 +42,11 @@
 2. Private Cloud 
 	Private cloud deployment model is the exact opposite of the public cloud deployment model. 
 	It’s a one-on-one environment for a single user (customer).
-	There is no need to share your hardware with anyone else.
+	There is no need to share our hardware with anyone else.
 	Private cloud gives greater flexibility of control over cloud resources.
 	
 ##Advantages of the Private Cloud Model ##
-	Better Control: You are the sole owner of the property. You gain complete command over service integration, IT operations, policies, and user behavior. 
+	Better Control: we are the sole owner of the property. we gain complete command over service integration, IT operations, policies, and user behavior. 
 	Data Security and Privacy: It’s suitable for storing corporate information to which only authorized staff have access. By segmenting resources within the same infrastructure, improved access and security can be achieved.
 	Supports Legacy Systems: This approach is designed to work with legacy systems that are unable to access the public cloud. 
 	Customization: Unlike a public cloud deployment, a private cloud allows a company to tailor its solution to meet its specific needs.
@@ -60,7 +60,7 @@
 	
 ## Advantages of the Hybrid Cloud Model ##
 	Flexibility and control: Businesses with more flexibility can design personalized solutions that meet their particular needs.
-	Cost: Because public clouds provide scalability, you’ll only be responsible for paying for the extra capacity if you require it.
+	Cost: Because public clouds provide scalability, we’ll only be responsible for paying for the extra capacity if we require it.
 	Security: Because data is properly separated, the chances of data theft by attackers are considerably reduced. 
 
 ## Disadvantages of the Hybrid Cloud Model ##
@@ -75,7 +75,7 @@
 ## Advantages of the Community Cloud Model ##
 	Cost Effective: It is cost-effective because the cloud is shared by multiple organizations or communities.
 	Security: Community cloud provides better security.
-	Shared resources: It allows you to share resources, infrastructure, etc. with multiple organizations.
+	Shared resources: It allows we to share resources, infrastructure, etc. with multiple organizations.
 	Collaboration and data sharing: It is suitable for both collaboration and data sharing.
 
 ## Disadvantages of the Community Cloud Model ##

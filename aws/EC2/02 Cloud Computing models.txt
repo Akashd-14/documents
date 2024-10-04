@@ -1,6 +1,7 @@
 
 ## Types Of Cloud Computing Models
 ## Layers of Cloud Computing
+## Service Models
 
 In general, Cloud Computing Models are widely classified into 4 types. 
 They are as follows:
@@ -60,3 +61,6 @@ Examples		Amazon Web Services (AWS)	Google App Engine				Salesforce					AWS Lamb
 	It contains one or more discrate data centers with redundant power, network and connectivity.
 	AWS provides 105 AZ's within 33 geographic regions, and planned for 21 more AZ's.
 	In India there are total 6 AZ's are present, where 2 in Mumbai and Chennai, Delhi, Hyderabad and Bengalore contains one each.
+	
+## Edge-Location
+	A site that CloudFront uses to cache copies of our content for faster delivery to users at any location.

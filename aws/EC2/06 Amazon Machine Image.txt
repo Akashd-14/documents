@@ -7,7 +7,7 @@
 	We can use different AMI's to launch instances when we require instances with different configurations.
 	
 	It includes the following 
-		1) One or more Amazon EPS snapshot or for instance store blocked AMI's a template for root volume of the ins.
+		1) One or more Amazon EBS snapshot or for instance store blocked AMI's a template for root volume of the instance.
 		2) Launch permission that control which aws accounts can use the AMI to launch instance.
 		3) A block device mapping that specifies the volume to attach to the instance when it is launched.
 		4) Operating system

@@ -1,7 +1,7 @@
 
 ## What is virtualization?
 	Virtualization is a process that allows a computer to share its hardware resources with multiple digitally separated environments.
-	Each virtualized environment runs within its allocated resources such as memory, processing power, and storage. 
+	Each virtualized environment runs within its allocated resources such as memory, processing power and storage. 
 	With virtualization, organizations can switch between different operating systems on the same server without rebooting. 
 	Virtual machines and hypervisors are two important concepts in virtualization.
 
