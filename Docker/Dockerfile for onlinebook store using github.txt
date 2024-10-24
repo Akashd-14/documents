@@ -1,0 +1,12 @@
+FROM ubuntu:latest
+RUN apt-get update && apt install git -y && apt install maven -y && apt install unzip -y && apt install wget -y
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.zip
+RUN unzip apache-tomcat-9.0.96.zip
+RUN git clone https://github.com/Akashd-14/onlinebookstore_Source_code.git
+WORKDIR /onlinebookstore_Source_code
+RUN mvn clean package
+WORKDIR /apache-tomcat-9.0.96
+RUN cp /onlinebookstore_Source_code/target/onlinebookstore.war webapps
+RUN chmod 777 bin/*
+EXPOSE 8080
+CMD ["/apache-tomcat-9.0.96/bin/catalina.sh", "run"]

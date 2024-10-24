@@ -1,0 +1,7 @@
+FROM ubuntu as myimage
+RUN apt-get update && apt install maven -y
+COPY onlinebookstore_Source_code /root/onlinebook
+WORKDIR /root/onlinebook
+RUN mvn clean package
+FROM tomcat:9.0.96-jdk17-temurin-jammy
+COPY --from=myimage /root/onlinebook/target/onlinebookstore.war /usr/local/tomcat/webapps/.
