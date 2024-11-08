@@ -1,0 +1,17 @@
+
+kubectl api-resources   ## to check k8s resources & api-version
+
+kubectl run <pod-name> --image=<image-name>   ## to create pod
+
+kubectl apply -f <file.yml>   ## Create k8s resource/object
+
+kubectl get pods    ## check created pods
+
+kubectl describe pod <pod-name>   ## check pod details
+
+Kubectl get deploy    ## check created deployments
+kubectl get deployment
+
+kubectl describe deploy <deploy-name>   ## check deployment details
+
+kubectl delete resource <resource-name>   ## to delete created resource

@@ -1,0 +1,8 @@
+1 To create ekscluster
+eksctl create cluster -n <cluster-name> -r <aws-region> -t <instance-type for worker node> -N <No. of worker nodes>
+
+2 To delete cluster
+eksctl delete cluster -n <cluster-name> -r <aws-region>
+
+3 To check present clusters
+aws eks list-clusters

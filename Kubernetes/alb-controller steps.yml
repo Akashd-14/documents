@@ -1,0 +1,140 @@
+Step 1: Create OIDC provider (eksctl)
+  1 Determine the OIDC issuer ID for our cluster.
+    cluster_name=<cluster-name>  (give cluster name)
+    oidc_id=$(aws eks describe-cluster --name my-cluster --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)  
+    echo $oidc_id
+  It will give oidc id:
+      copy that id 
+  
+  2 Determine whether an IAM OIDC provider with our cluster’s issuer ID is already in your account.
+    aws iam list-open-id-connect-providers | grep $oidc_id | cut -d "/" -f4
+
+  2 Set AWS region to for IAM Service Account
+    aws configure
+  
+  4 Create an IAM OIDC identity provider for our cluster with the following command.
+    eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
+  It will give output:
+    will create IAM Open ID Connect provider for cluster "akash" in "us-east-1"
+    created IAM Open ID Connect provider for cluster "akash" in "us-east-1"
+
+Step 2: Configure IAM
+  1 Download an IAM policy for the AWS Load Balancer Controller that allows it to make calls to AWS APIs on your behalf.
+    curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.7.2/docs/install/iam_policy.json
+
+  2 Create an IAM policy using the policy downloaded in step 1.
+    aws iam create-policy \
+    --policy-name AWSLoadBalancerControllerIAMPolicy \
+    --policy-document file://iam_policy.json
+
+  4 create IAM Service Account using eksctl (1st edit cluster-name and account ID)
+  Note-
+    Provide Account-ID in below script
+    
+    eksctl create iamserviceaccount \
+    --cluster=<cluster-name> \
+    --namespace=kube-system \
+    --name=aws-load-balancer-controller \
+    --role-name AmazonEKSLoadBalancerControllerRole \
+    --attach-policy-arn=arn:aws:iam::<Account-ID>:policy/AWSLoadBalancerControllerIAMPolicy \
+    --approve 
+
+Step 3: Create load-balancer-role-policy file
+  Note-
+    Provide Account-ID, Region and OIDC-ID in below script
+
+  cat >load-balancer-role-trust-policy.json <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Federated": "arn:aws:iam::<Account-ID>:oidc-provider/oidc.eks.<region>.amazonaws.com/id/<OIDC-ID>"
+            },
+            "Action": "sts:AssumeRoleWithWebIdentity",
+            "Condition": {
+                "StringEquals": {
+                    "oidc.<region>.amazonaws.com/id/<OIDC-ID>:aud": "sts.amazonaws.com",
+                    "oidc.eks.<region>.amazonaws.com/id/<OIDC-ID>:sub": "system:serviceaccount:kube-system:aws-load-balancer-controller"
+                }
+            }
+        }
+    ]
+}
+EOF
+
+Step 4: Create IAM Role using above policy file
+  aws iam create-role \
+  --role-name AmazonEKSLoadBalancerControllerRole \
+  --assume-role-policy-document file://"load-balancer-role-trust-policy.json"
+
+Step 5: Attach the required Amazon EKS managed IAM policy to the IAM role.
+  Note-
+    Provide Account-ID in below script
+
+  aws iam attach-role-policy \
+  --policy-arn arn:aws:iam::<Account-ID>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --role-name AmazonEKSLoadBalancerControllerRole
+
+Step 6: Create aws-load-balancer-controller-service-account.yaml file.
+  Note-
+    Provide Account-ID in below script
+  
+  cat >aws-load-balancer-controller-service-account.yaml <<EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/name: aws-load-balancer-controller
+  name: aws-load-balancer-controller
+  namespace: kube-system
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::<Account-ID>:role/AmazonEKSLoadBalancerControllerRole
+EOF
+
+Step 7: Create the Kubernetes service account on our cluster
+  kubectl apply -f aws-load-balancer-controller-service-account.yaml
+
+Step 8: Install cert-manager
+  kubectl apply \
+    --validate=false \
+    -f https://github.com/jetstack/cert-manager/releases/download/v1.13.5/cert-manager.yaml
+
+Step 9: Install AWS Load Balancer Controller
+  1 Download the controller specification
+    curl -Lo v2_7_2_full.yaml https://github.com/kubernetes-sigs/aws-load-balancer-controller/releases/download/v2.7.2/v2_7_2_full.yaml
+  
+  2 Remove the ServiceAccount section in the manifest
+    sed -i.bak -e '612,620d' ./v2_7_2_full.yaml
+
+  2 Replace your-cluster-name with the name of our cluster.
+  Note-
+    Provide Cluster-name in below script
+
+    sed -i.bak -e 's|your-cluster-name|<Cluster-name>|' ./v2_7_2_full.yaml
+  
+  3 Install AWS Load Balancer Controller
+    kubectl apply -f v2_7_2_full.yaml
+  
+  4 Download the IngressClass and IngressClassParams manifest to our cluster.
+    curl -Lo v2_7_2_ingclass.yaml https://github.com/kubernetes-sigs/aws-load-balancer-controller/releases/download/v2.7.2/v2_7_2_ingclass.yaml
+
+  5 Apply the manifest to our cluster.
+    kubectl apply -f v2_7_2_ingclass.yaml
+
+  It will give output:
+    ingressclassparams.elbv2.k8s.aws/alb created
+    ingressclass.networking.k8s.io/alb created
+
+  6 Verify that the controller is installed.
+    kubectl get deployment -n kube-system aws-load-balancer-controller
+
+Step 10: Create ingress service for our deployment
+  1 Create namespace
+  2 Create deployments
+  3 Create service for deployments
+  4 Create ingress
+Step 11: Check imgress service 
+  kubectl get ingress
