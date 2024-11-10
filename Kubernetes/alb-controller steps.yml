@@ -1,7 +1,7 @@
 Step 1: Create OIDC provider (eksctl)
   1 Determine the OIDC issuer ID for our cluster.
     cluster_name=<cluster-name>  (give cluster name)
-    oidc_id=$(aws eks describe-cluster --name my-cluster --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)  
+    oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)  
     echo $oidc_id
   It will give oidc id:
       copy that id 
@@ -27,6 +27,8 @@ Step 2: Configure IAM
     --policy-name AWSLoadBalancerControllerIAMPolicy \
     --policy-document file://iam_policy.json
 
+  3 aws configure
+
   4 create IAM Service Account using eksctl (1st edit cluster-name and account ID)
   Note-
     Provide Account-ID in below script
@@ -37,7 +39,10 @@ Step 2: Configure IAM
     --name=aws-load-balancer-controller \
     --role-name AmazonEKSLoadBalancerControllerRole \
     --attach-policy-arn=arn:aws:iam::<Account-ID>:policy/AWSLoadBalancerControllerIAMPolicy \
-    --approve 
+    --approve
+
+  5 Determine whether an IAM OIDC provider with our cluster’s issuer ID is already in your account.
+    aws iam list-open-id-connect-providers | grep $oidc_id | cut -d "/" -f4
 
 Step 3: Create load-balancer-role-policy file
   Note-

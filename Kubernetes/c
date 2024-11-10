@@ -8,7 +8,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: prod
+  namespace: dev
   name: my-first-deployment
   labels:
     app: nginx
@@ -31,7 +31,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: prod
+  namespace: dev
   name: my-second-deployment
   labels:
     app: second
@@ -54,7 +54,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: prod
+  namespace: dev
   name: first-svc
 spec:
   selector:
@@ -67,7 +67,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: prod
+  namespace: dev
   name: second-svc
 spec:
   selector:
@@ -81,7 +81,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: b8-ingress
-  namespace: prod
+  namespace: dev
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
