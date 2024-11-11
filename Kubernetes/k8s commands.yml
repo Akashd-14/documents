@@ -3,6 +3,8 @@ kubectl api-resources   ## to check k8s resources & api-version
 
 kubectl run <pod-name> --image=<image-name>   ## to create pod
 
+kubectl run -it --name=<image-name> -- bash   ## to create & go inside the pod
+
 kubectl apply -f <file.yml>   ## Create k8s resource/object
 
 kubectl get pods    ## check created pods
@@ -14,4 +16,24 @@ kubectl get deployment
 
 kubectl describe deploy <deploy-name>   ## check deployment details
 
-kubectl delete resource <resource-name>   ## to delete created resource
+kubectl delete <resource-type> <resource-name>   ## to delete created resource
+
+kubectl get all -A    ## to check all created resources
+
+kubectl create namespace <name>   ## to create namespace
+
+kubectl <command> <resource-type> <resource-name> -n <namespace>
+
+kubectl get roles    ## to check roles
+
+kubectl get rolebindings    ## to check rolebondings
+
+kubectl get sa    ## check created service accounts
+
+kubectl describe role <role-name>  ## to check role details
+
+kubectl describe rolesbinding <role-name>  ## to check rolebinding details
+
+kubectl describe clusterrole <role-name>  ## to check clusterrole details
+
+kubectl describe clusterrolesbinding <role-name>  ## to check clusterrolebinding details

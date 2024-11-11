@@ -20,18 +20,3 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-
-## Steps to create Deployment ##
-1 Install Kubectl eksctl
-2 Create cluster
-3 Create manifest file for deployment
-  vi deployment.yml
-
-4 Create deployment using command
-
-  kubectl apply -f deployment.yml
-
-5 To check created deployment
-
-  kubectl get deployment
-  kubectl get deploy
