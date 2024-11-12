@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: zomato
+  labels:
+    name: zomato
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: zomato
+  name: zomato-deployment
+  labels:
+    app: zomato-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: zomato-app
+  template:
+    metadata:
+      labels:
+        app: zomato-app
+    spec:
+      containers:
+      - name: zomato-container
+        image: akashdakave05/cloudzomato:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: zomato
+  name: zomato-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: zomato-app
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000

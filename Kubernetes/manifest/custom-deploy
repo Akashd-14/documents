@@ -16,8 +16,8 @@ spec:
         app: akash-1
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: zomato-app
+        image: akashdakave05/cloudzomato:latest
         ports:
         - containerPort: 3000
 ---

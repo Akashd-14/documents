@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: <ns-name>
+  name: de-svc
+spec:
+  selector:
+    app: <deployment-lable>
+  ports:
+  - name: http
+    port: 80
+    targetPort: <container-port>
+
+steps:
+  1 Cteate one deployment
+
+  2 kubectl apply -f clusterip.yml ## Create ClusterIP service
+
+  3 kubectl get svc -n <ns> ## Check service created or not
+
+  4 Copy the cluster-IP
+
+  5 Create one pod & go inside the pod using
+    kubectl run -it <pod-name> --image=ubuntu -- bash
+
+  6 run commands inside the pod
+    apt update -y && apt install curl -y
+
+  7 To access deployment inside the pod use
+    curl <cluster-IP> ## It will show the deployment output

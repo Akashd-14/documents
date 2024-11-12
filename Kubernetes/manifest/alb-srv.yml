@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: <ns-name>
+  name: <svc-name>
+spec:
+  type: LoadBalancer
+  selector:
+    app: <deployment-lable>
+  ports:
+  - name: http
+    port: <container-port>
+    targetPort: <container-port>
+
+Steps:
+  1 Create one deployment
+
+  2 kubectl apply -f alb-svc.yml ## Create LoadBalancer service
+
+  3 kubectl get svc -n <ns> ## Check service created or not
+
+  4 Copy the External-IP
+
+  5 To access deployment over internet
+    <External-IP>:<container-port>
