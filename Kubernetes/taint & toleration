@@ -1,0 +1,45 @@
+Taints:
+  Taints are applied to nodes in a Kubernetes cluster to repel pods from being scheduled on those nodes.
+  Each taint consists of three parts
+    1 Key: The key represents the name of the taint and is used to uniquely identify it.
+    2 Value: An optional value associated with the taint key.
+    3 Effect: The effect determines how the taint affects pod scheduling.
+
+There are three values for the effect:
+
+1 NoSchedule:
+    Prevents new pods from being scheduled on the tainted node.
+    
+2 PreferNoSchedule:
+    PreferNoSchedule is a "preference" or "soft" version of NoSchedule
+    Similar to NoSchedule, but the scheduler tries to avoid placing new pods on the tainted node unless necessary.
+    
+3 NoExecute:
+    This affects pods that are already running on the node.
+    It Evicts existing pods that do not tolerate the taint.
+
+1 Add a taint to a node 
+  kubectl taint nodes <node-name> <key>=<value>:<effect>
+
+2 Remove the taint added to node
+  kubectl taint nodes <node-name> <key>=<value>:<effect>-
+
+Tolerations:
+  Tolerations are applied to pods and indicate that the pod can be scheduled on nodes with specific taints.
+  Tolerations allow the scheduler to schedule pods with matching taints.
+  A pod with toleration will only be scheduled on nodes that have a matching taint.
+  The default value for operator is Equal.
+  A toleration "matches" a taint if the keys are the same and the effects are the same
+  the operator is Exists (in which case no value should be specified), or
+  the operator is Equal and the values should be equal.
+
+  tolerations:
+  - key: "key"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoSchedule"
+  
+  tolerations:
+  - key: "key1"
+    operator: "Exists"
+    effect: "NoSchedule"
