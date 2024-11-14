@@ -24,4 +24,4 @@ steps:
   5 In inbound rule add a rule with custom tcp & port mentioned in nodePort section inside nodeport yaml file
 
   6 Copy public address of any node & access over browser using 
-    <ip-address>:<nodePort>   ## it will give deployment output
+    <node-ip-address>:<nodePort>   ## it will give deployment output

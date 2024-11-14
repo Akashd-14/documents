@@ -141,5 +141,7 @@ Step 10: Create ingress service for our deployment
   2 Create deployments
   3 Create service for deployments
   4 Create ingress
-Step 11: Check imgress service 
+  (Use deployment & ingress manifest for reference)
+  
+Step 11: Check ingress service 
   kubectl get ingress

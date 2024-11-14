@@ -1,7 +1,7 @@
-1 Install matrics server
+1 Install matrics server:
     kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
-2 Create deployment & service
+2 Create deployment & service:
 
 apiVersion: apps/v1
 kind: Deployment
@@ -39,27 +39,26 @@ spec:
   selector:
     run: php-apache
 
-3 Create hpa
+3 Create hpa:
     kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=5
 
-4 Check current status of hpa
+4 Check current status of hpa:
     kubectl get hpa
 
   The output is similar to:
+    NAME         REFERENCE                     TARGET    MINPODS   MAXPODS   REPLICAS   AGE
+    php-apache   Deployment/php-apache/scale   0% / 50%    1            5       1       10s
 
-NAME         REFERENCE                     TARGET    MINPODS   MAXPODS   REPLICAS   AGE
-php-apache   Deployment/php-apache/scale   0% / 50%    1            5       1       10s
-
-5 Increase the load
+5 Increase the load:
     kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 
-6 Watch the load
+6 Watch the load:
     kubectl get hpa php-apache --watch
 
-7 Check whether pods are replicated or not
+7 Check whether pods are replicated or not:
     kubectl get pods
 
-8 Check current status of deployment
+8 Check current status of deployment:
     kubectl get deployment php-apache
 
-9 Use Ctrl+c to stop thr load over pod & check above 3 steps
+9 Use Ctrl+c to stop thr load over pod & check above 3 Steps:

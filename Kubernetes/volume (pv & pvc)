@@ -1,0 +1,164 @@
+Volume:
+    In Kubernetes, the main difference between a Persistent Volume (PV) and a Persistent Volume Claim (PVC) is that a PV is the actual storage resource, while a PVC is a request for storage.
+    Kubernetes has a number of storage types, and these can be mixed and matched within a pod.
+The important objects for running stateful containers are:
+    1 Persistent Volume:
+     Low level representation of a storage volume.
+    2 Persistent Volume Claim:
+     Binding between a Pod and Persistent Volume.
+    3 Storage Class:
+     Allows for dynamic provisioning of Persistent Volumes.
+
+PV:
+    A storage resource in a Kubernetes cluster that defines the location and capabilities of a storage volume.
+    PVs can be provisioned by an administrator or dynamically provisioned using Storage Classes. PVs can represent physical disks, file systems, or vendor-hosted storage resources.
+
+PVC:
+    A request for storage resources made by an application.
+    PVCs are similar to vouchers that can be redeemed for storage access.
+    PVCs are mounted into workloads as volumes so that the workload can claim its share of the persistent storage. 
+ 
+Here are some other things to know about PVs and PVCs:
+    A PVC to PV binding is a one-to-one mapping that uses a ClaimRef to create a  bi-directional binding. 
+    When a PVC is deleted, the associated PV is released from the claim, but the PV and data remain available for reuse. 
+    You can use the same PVC in two different pods.
+
+Configure a Pod to Use a PersistentVolume for Storage:
+
+1 Create one directory:
+    sudo mkdir volume1
+2 In the volume1 directory, create an index.html file:
+    vi index.html
+3 Create a PersistentVolume:
+    vi volume.yml
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/home/ubuntu/volume1"
+
+4 Create the PersistentVolume:
+    kubectl apply -f volume.yml
+
+5 Check PersistentVolume details:
+    kubectl get pv my-volume
+
+    It will show output
+        NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+        my-volume      8Gi        RWX            Retain         Available             manual           <unset>                     28s
+
+6 Create a PersistentVolumeClaim:
+    vi pv-claim.yml
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: my-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+
+7 Create the PersistentVolumeClaim:
+    kubectl apply -f pv-claim.yml
+
+8 Look again at the PersistentVolume:
+    kubectl get pv my-volume
+
+    It will show output (Volume status changes from Available to Bound)
+    NAME        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS       CLAIM            STORAGECLASS   VOLUMEATTRIBUTESCLASS   REASON   AGE
+    my-pvc         8Gi        RWX            Retain         Bound    default/my-volume     manual             <unset>                    14m
+
+9 Check PersistentVolumeClaim:
+    kubectl get pvc my-pvc
+
+    It will show output
+    NAME     STATUS   VOLUME      CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+    my-pvc   Bound    my-volume      8Gi        RWX            manual         <unset>              2m8s
+
+10 Create pod:
+    vi volume-pod.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-vol
+spec:
+  volumes:
+    - name: my-volume
+      persistentVolumeClaim:
+        claimName: my-pvc
+  containers:
+  - name: nginx-vol
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+      name: "http-server"
+    volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: my-volume
+
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: akash
+  labels:
+    name: akash
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: akash
+  name: first-deployment
+  labels:
+    app: akash-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akash-1
+  template:
+    metadata:
+      labels:
+        app: akash-1
+    spec:
+      volumes:
+      - name: my-volume
+        persistentVolumeClaim:
+          claimName: my-pvc
+      containers:
+      - name: nginx-vol
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: my-volume
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+    namespace: akash
+    name: akash-lb
+    spec:
+    type: LoadBalancer
+    selector:
+        app: akash-1
+    ports:
+    - name: http
+        port: 80
+        targetPort: 80

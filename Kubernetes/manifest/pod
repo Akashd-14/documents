@@ -10,7 +10,7 @@ spec:
     - containerPort: 80
 
 ## Steps to create pod ##
-1 Install Kubectl eksctl
+1 Install Kubectl eksctl.
 2 Create cluster
 3 Create manifest file for pod
   vi pod.yml
