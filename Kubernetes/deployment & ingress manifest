@@ -67,7 +67,7 @@ spec:
   template:
     metadata:
       labels:
-        app:book-app
+        app: book-app
     spec:
       containers:
       - name: onlinebook
