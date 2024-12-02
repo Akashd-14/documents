@@ -1,0 +1,52 @@
+
+What is Terraform:
+    Terraform is an infrastructure as code tool (IaC) that helps us to define and manage cloud and on-prem resources safely and efficiently using human-readable configuration files.
+    Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features.
+
+Key features:
+    1 Infrastructure provisioning
+    2 Resource management
+    3 Configuration management
+    4 Multi-cloud support (AWS, Azure, GCP, and more)
+    5 State management
+
+
+Key Concepts:
+    1 Providers:
+       Connectors to cloud providers (e.g., AWS, Azure, GCP) or on-premises infrastructure.
+    2 Resources: 
+       Individual infrastructure components (e.g., EC2 instances, VPCs, databases).
+    3 Configurations: 
+       Human-readable files (.tf or .tf.json) defining infrastructure resources.
+    4 State: 
+       Terraform's understanding of current infrastructure configuration.
+    5 Workspaces: 
+       Isolated environments for managing separate infrastructure configurations.
+
+Terraform Workflow:
+    1 Configure:
+       Write configuration files.
+
+    1 Init: 
+       Initialize Terraform working directory.
+       Run terraform init in the directory where we want to create the Terraform configuration.
+
+    2 validate:
+       Checks the syntax and configuration of your Terraform files.
+       Run terraform validate in the directory containing our Terraform configuration files.
+
+    3 fmt:
+        Reformat configuration files for better readability.
+        Run terraform fmt in the directory containing Terraform configuration files
+
+    4 Plan: 
+       It generates an execution plan for Terraform configuration changes/ Preview changes to infrastructure.
+       Run terraform plan in the directory containing Terraform configuration files
+
+    5 Apply:
+       Execute changes to infrastructure.
+       Run terraform apply in the directory containing Terraform configuration files.
+
+    6 Destroy:
+       Delete infrastructure resources managed by terraform.
+       Run terraform destroy in the directory containing Terraform configuration files.

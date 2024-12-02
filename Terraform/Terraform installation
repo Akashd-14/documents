@@ -1,0 +1,27 @@
+######Installation #######
+
+1 Install terraform
+	https://developer.hashicorp.com/terraform/install
+	
+2 aws config
+
+3 terraform init
+
+4 terraform validate
+
+5 terraform fnt
+
+6 terraform plan
+
+7 terraform apply
+
+8 terraform destroy
+
+9 terraform apply --auto-approve
+
+10 terraform destroy --auto-approve
+
+For configuration files
+
+For provider
+https://registry.terraform.io/providers/hashicorp/aws/latest/docs

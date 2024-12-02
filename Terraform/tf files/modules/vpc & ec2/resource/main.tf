@@ -1,0 +1,19 @@
+module "vpc" {
+  source         = "../module"
+  vpc-name       = var.vpc-name
+  cidr           = var.vpc-cidr
+  default-cidr   = var.default-cidr-range
+  internet-gw    = var.internet-gw-name
+  nat-gw         = var.nat-gw-name
+  pub-az         = var.pub-availability_zone
+  pvt-az         = var.pvt-availability_zone
+  public-subnet  = var.pub-sub-name
+  private-subnet = var.pvt-sub-name
+  pub-sb-cidr    = var.pub-sb-cidr-range
+  pvt-sb-cidr    = var.pvt-sb-cidr-range
+  sg-name        = var.custom-sg-name
+  pub-ec2-name   = var.ec2-name
+  instance_type  = var.instance_type
+  AMI-id         = var.machine-id
+  key-pair       = var.key-pair-name
+}

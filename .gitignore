@@ -1,0 +1,15 @@
+.terraform.*
+Terraform\tf files\.terraform.*
+Terraform\tf files\.terraform
+Terraform\tf files\count\.terraform.*
+Terraform\tf files\count\.terraform
+Terraform\tf files\ec2\.terraform
+Terraform\tf files\ec2\.terraform.*
+Terraform\tf files\modules\vpc & ec2\resource\.terraform
+Terraform\tf files\modules\vpc & ec2\resource\.terraform.*
+Terraform\tf files\modules\s3\resource\.terraform
+Terraform\tf files\modules\s3\resource\.terraform.*
+Terraform\tf files\New folder\.terraform 
+Terraform\tf files\New folder\.terraform.*
+Terraform\tf files\variable\.terraform
+Terraform\tf files\variable\.terraform.*

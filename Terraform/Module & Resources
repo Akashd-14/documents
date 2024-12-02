@@ -1,0 +1,112 @@
+Module:
+ A module is a reusable collection of Terraform configuration files that represent a related set of infrastructure resources.
+ We can create multiple resources by using module.
+Modules are used for:
+1. Organize and Structure Code:
+  Break down large configurations into smaller, manageable pieces.
+2. Reusability:
+  Use the same module in multiple configurations, reducing code duplication.
+3. Abstraction:
+  Hide complex infrastructure details, making it easier to manage and maintain.
+4. Collaboration:
+  Share modules across teams and projects.
+5. Versioning:
+  Manage different versions of modules.
+
+module steps:
+  1. Create two directories
+    1. module
+    2. resource
+
+  2. Go to module directory
+
+  3. create variable.tf Terraform files
+
+  variable.tf
+  create variables for resources
+example:
+    variable "vpc-name" {
+       type  = string
+    }
+
+  4. create main.tf Terraform files
+    create resources using variables provided in variable.tf files
+example:
+    resource "aws_vpc" "akash" {
+    cidr_block       = var.cidr
+    instance_tenancy = "default"
+
+    tags = {
+    Name = var.vpc-name
+      }
+  }
+
+  5. Create output.tf file
+example:
+  output "vpc-name" {
+    value =  aws_vpc.akash.tags
+  }
+
+  6. Now goto resource directory
+
+  7. Create variable.tf Terraform files
+
+  variable.tf
+  create variables for resources
+example:
+    variable "vpc-name" {
+       type  = string
+    }
+
+  8. Create main.tf Terraform file
+
+  main.tf
+  module "vpc" {
+    source = "module direcory path where main.tf file present"
+    module dir variable Name = var.resource dir variable name
+    We have to match all variables
+  }
+
+  9. Create output.tf file
+    output "my-vpc-name" {
+    value = module.vpc.tag
+  }
+
+  10. Create backend.tf file to store state file remotely.
+    terraform {
+      backend "s3" {
+        bucket = "<s3-bucket-name>"
+        key    = "vpc/terraform.tfstate"  ## path to store state file.
+        region = "us-east-1"    ## aws s3 bucket region.
+    }
+  }
+
+  11. Create provider .tf version.tf files.
+
+  12. Create terraform.tfvars file to provide variables value
+example:
+  vpc-name              = "my-tf-vpc"
+  vpc-cidr              = "192.180.0.0/22"
+  default-cidr-range    = "0.0.0.0/0"
+  We have to add all variable names provided in resource dir main.tf files.
+
+  13. Run the commands
+
+      terraform init
+      terraform fmt
+      terraform validate
+      terraform plan
+      terraform apply / terraform apply --auto-approve
+
+Note:
+  Now we can create multiple resources with same configurations.
+  For that we need to make some changes
+
+  1 Create new <file-name>.tfvars file and provide variables data
+  2 Modify backend.tf file by changing file path to store state file.
+  3 Run commands
+    terraform init
+    terraform fmt
+    terraform validate
+    terraform plan
+    terraform apply -var-file="<file-name>.tfvars"
