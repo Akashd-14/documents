@@ -1,0 +1,45 @@
+### Steps to attach additional ebs volume for jenkins backup ####
+
+1 Create Jenkins server
+
+2 Create one ebs volume
+
+3 Attach volume to jenkins server (ec2 instance)
+
+4 Connect jenkins server
+
+5 Mount volume using following commands
+
+lsblk	## to check attached volume is available or not
+
+file -s /dev/xvdf	#will check file system created for volume /dev/xvdf
+
+mkfs -t ext4 /dev/xvdf    #creates file system and formats volume as ext4
+
+mount /dev/xvdf /var/lib/jenkins	# mount /dev/xvdf to jenkins
+
+vi /etc/fstab	# to make attached volume permanent
+
+/dev/xvdf  /var/lib/jenkins  ext4  defaults,nofail  0  2	# add this line at end of the file
+
+chown -R jenkins:jenkins /var/lib/jenkins	# change jenkins directory owner
+
+6 Restart jenkins service
+systemctl restart jenkins
+
+7 Create some jobs over jenkins dashboard which will be reflected in /var/lib/jenkins directory
+
+8 Now unmount the attached volume
+umount /var/lib/jenkins
+umount /dev/xvdf
+
+9 Create new jenkins server, connect it and following commands to check existing jobs over new server
+lsblk
+file -s /dev/xvdf
+mount /dev/xvdf /var/lib/jenkins
+chown -R jenkins:jenkins /var/lib/jenkins
+
+10 Restart jenkins service
+systemctl restart jenkins
+
+11 Check jenkins dashboard we will see existing jobs over newly created server

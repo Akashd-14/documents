@@ -1,0 +1,26 @@
+###Copy Deployment from one namespace to another ###
+
+step 1 Create namespace dev
+	kubectl create ns dev
+
+step 2 Create deoployment in dev namespace
+	vi deoployment.yaml
+	kubectl apply -f deoployment.yaml --namespace dev
+	kubectl get all -n dev
+
+step 3 Create helm chart
+	kubectl get deployment <deployment-name> -n dev -o yaml > deployment.yaml
+	helm create <chart-name>	## It will create <chart-name> directory
+
+step 4 Replace deoployment.yaml file in <chart-name>/template directory by our deoployment.yaml file
+
+step 5 make changes in value.yaml file as per new deoployment requirement
+
+step 6 Create new namespace for deoployment
+	kubectl create namespace <new-ns-name>
+ 
+step 7 Deploy to new namespace
+	helm install <new-deoployment-name> <chart.yaml-path> --namespace <new-ns-name>
+
+step 8 Check newly created deoployment was successful or not
+	kubectl get all -n <new-ns-name>

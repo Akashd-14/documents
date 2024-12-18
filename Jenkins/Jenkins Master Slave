@@ -1,0 +1,44 @@
+
+Step 1 Create Master Jenkins
+	Create Jenkins server
+	Install SSH Plugin
+	
+Step 2 Create one node server using EC2
+
+Step 3 Install java on node server with same version installed in master
+
+step 4 Add private key in masters jenkins directory
+	sudo su - jenkins
+	mkdir .ssh
+	chmod 700 .ssh
+	cd .ssh
+	vi <keyfile-name>
+	## insert private key of node server
+	chmod 600 <keyfile-name>
+	
+step 5 Create credential in master for ssh connection
+	Go to manage jenkins
+	Go to credentials
+	select system
+	select global credentials
+	add credentials
+	select SSH Username with private key
+	provide information (id, username, private key of node server)
+	
+Step 6 Add node in master as a slave
+	Go to manage jenkins
+	Go to Nodes
+	select New nodes
+	Add node name & select Permanent Agent
+	provide information (Number of executors, Remote root directory, Labels)
+	select launch method (Launch agent via SSH)
+	provide information 
+		Host=<node-private-ip>
+		Credentials = <select credential created in step 5>
+		save
+	
+	
+	
+	
+
+

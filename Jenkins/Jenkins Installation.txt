@@ -1,3 +1,5 @@
+### Create EC2 instance ###
+Open port 8080 in security group
 
 ### Install JAVA ###
 sudo apt update	-y
@@ -12,3 +14,19 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt-get update -y
 sudo apt-get install jenkins -y
+
+### Give sudo privilleges to jenkins user ###
+vi /etc/sudoers
+
+Add line below User privilege specification
+
+jenkins ALL=(ALL) NOPASSWD:ALL
+
+### Restart Jenkins service ###
+systemctl restart jenkins
+
+### Access Jenkins over Internet ###
+<server public IP>:8080
+
+### Get intial password ###
+cat /var/lib/jenkins/secrets/initialAdminPassword

@@ -1,0 +1,23 @@
+###Installing Helm on Ubuntu/Linux ###
+
+step1 Download the Latest Helm Release:
+
+	curl -O https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz
+
+step2 Extract the Package:
+
+	tar xvf helm-v3.16.2-linux-amd64.tar.gz
+
+step3 Move the Binary to /usr/local/bin:
+
+	sudo mv linux-amd64/helm /usr/local/bin/helm
+
+step4 Clean Up:
+
+	rm helm-v3.16.2-linux-amd64.tar.gz
+	rm -rf linux-amd64
+
+step5 Verify the Installation:
+
+	helm version
+	which helm

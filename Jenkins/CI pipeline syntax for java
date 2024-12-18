@@ -1,0 +1,29 @@
+pipeline {
+    agent { label "node" }
+
+    stages {
+        stage('maven installation') {
+            steps {
+                sh '''
+                sudo apt-get update -y
+                sudo apt install maven -y
+                '''
+            }
+        }
+        stage('git clone') {
+            steps {
+                git 'https://github.com/Akashd-14/onlinebookstore_Source_code.git'
+            }
+        }
+        stage('build artifact') {
+            steps {
+                sh 'sudo mvn clean package'
+            }
+        }
+        stage('store artifact to s3') {
+            steps {
+                sh 'sudo aws s3 cp target/onlinebookstore.war s3://aws-project-bucket-1/onlinebookstore.war'
+                }
+        }
+    }
+}
